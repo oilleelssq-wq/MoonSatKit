@@ -5,7 +5,7 @@ fn tle_error(
   fragment : StringView,
   message : String,
 ) -> SatError {
-  { kind, line, fragment: fragment.to_owned(), message }
+  SatError::new(kind, message, fragment=fragment.to_owned(), line~)
 }
 
 ///|

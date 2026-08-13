@@ -39,7 +39,7 @@ fn main {
       }
       match @lib.parse_utc_datetime(args[3]) {
         Ok(value) => println(value.to_string())
-        Err(message) => fail(message)
+        Err(error) => fail(error.to_string())
       }
     }
     command => {

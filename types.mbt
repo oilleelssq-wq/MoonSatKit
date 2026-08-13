@@ -5,6 +5,8 @@ pub(all) enum SatErrorKind {
   InvalidChecksum
   InvalidCatalogNumber
   MismatchedCatalogNumber
+  InvalidDateTime
+  OutOfRange
 } derive(Eq, Debug)
 
 ///|
@@ -14,6 +16,16 @@ pub(all) struct SatError {
   fragment : String
   message : String
 } derive(Eq, Debug)
+
+///|
+pub fn SatError::new(
+  kind : SatErrorKind,
+  message : String,
+  fragment? : String = "",
+  line? : Int = 0,
+) -> SatError {
+  { kind, line, fragment, message }
+}
 
 ///|
 pub fn SatError::to_string(self : SatError) -> String {
