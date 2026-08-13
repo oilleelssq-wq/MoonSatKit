@@ -1,7 +1,6 @@
 import {
   "oillee/moonsatkit" @lib,
   "moonbitlang/core/env",
-  "moonbitlang/x/sys",
 }
 
 pkgtype(kind: "executable")

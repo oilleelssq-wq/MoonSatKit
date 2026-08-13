@@ -14,7 +14,3 @@ keywords = [ "satellite", "orbit", "tle", "sgp4", "geodesy", "visualization" ]
 preferred_target = "wasm-gc"
 
 description = "Pure MoonBit toolkit for satellite orbit data, pass prediction, and visualization"
-
-import {
-  "moonbitlang/x@0.4.48",
-}

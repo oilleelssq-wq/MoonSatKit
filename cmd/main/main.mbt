@@ -10,7 +10,6 @@ fn print_usage() -> Unit {
 ///|
 fn fail(message : String) -> Unit {
   println("error: \{message}")
-  @sys.exit(2)
 }
 
 ///|
