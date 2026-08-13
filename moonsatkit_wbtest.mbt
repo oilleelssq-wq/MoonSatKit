@@ -16,10 +16,7 @@ test "validate_tle rejects bad checksum digits" {
 test "official verification sample passes checksum validation" {
   let line1 = "1 00005U 58002B   00179.78495062  .00000023  00000-0  28098-4 0  4753"
   let line2 = "2 00005  34.2682 348.7242 1859667 331.7664  19.3264 10.82419157413667"
-  let tle = validate_tle(
-    line1,
-    line2,
-  ).unwrap()
+  let tle = validate_tle(line1, line2).unwrap()
   assert_eq(tle.catalog_number, 5)
   assert_true(tle.checksum_line1_ok)
   assert_true(tle.checksum_line2_ok)
