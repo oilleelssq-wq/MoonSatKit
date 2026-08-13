@@ -1,0 +1,100 @@
+// Generated using `moon info`, DON'T EDIT IT
+package "oillee/moonsatkit"
+
+import {
+  "moonbitlang/core/debug",
+}
+
+// Values
+pub fn days_in_month(Int, Int) -> Int
+
+pub fn is_leap_year(Int) -> Bool
+
+pub fn parse_tle(String, String) -> Result[Tle, SatError]
+
+pub fn parse_utc_datetime(String) -> Result[UtcDateTime, String]
+
+pub fn validate_tle(String, String) -> Result[Tle, SatError]
+
+// Errors
+
+// Types and methods
+pub(all) struct GroundStation {
+  latitude_deg : Double
+  longitude_deg : Double
+  altitude_m : Double
+} derive(Eq, @debug.Debug)
+
+pub(all) struct Observation {
+  azimuth_deg : Double
+  elevation_deg : Double
+  range_km : Double
+  range_rate_km_s : Double
+  above_horizon : Bool
+} derive(Eq, @debug.Debug)
+
+pub(all) struct PassWindow {
+  aos : UtcDateTime
+  tca : UtcDateTime
+  los : UtcDateTime
+  maximum_elevation_deg : Double
+} derive(Eq, @debug.Debug)
+
+pub(all) struct SatError {
+  kind : SatErrorKind
+  line : Int
+  fragment : String
+  message : String
+} derive(Eq, @debug.Debug)
+pub fn SatError::to_string(Self) -> String
+
+pub(all) enum SatErrorKind {
+  EmptyInput
+  InvalidFormat
+  InvalidChecksum
+  InvalidCatalogNumber
+  MismatchedCatalogNumber
+} derive(Eq, @debug.Debug)
+
+pub(all) struct Tle {
+  line1 : String
+  line2 : String
+  catalog_number : Int
+  epoch : String
+  inclination : String
+  right_ascension : String
+  eccentricity : String
+  argument_of_perigee : String
+  mean_anomaly : String
+  mean_motion : String
+  checksum_line1_ok : Bool
+  checksum_line2_ok : Bool
+} derive(Eq, @debug.Debug)
+
+pub(all) struct UtcDateTime {
+  year : Int
+  month : Int
+  day : Int
+  hour : Int
+  minute : Int
+  second : Int
+} derive(Compare, Eq, @debug.Debug)
+pub fn UtcDateTime::next_second(Self) -> Self
+pub fn UtcDateTime::to_string(Self) -> String
+
+pub(all) struct Vector3 {
+  x : Double
+  y : Double
+  z : Double
+} derive(Eq, @debug.Debug)
+pub fn Vector3::add(Self, Self) -> Self
+pub fn Vector3::dot(Self, Self) -> Double
+pub fn Vector3::scale(Self, Double) -> Self
+pub fn Vector3::sub(Self, Self) -> Self
+pub fn Vector3::to_string(Self) -> String
+pub fn Vector3::zero() -> Self
+
+// Type aliases
+
+// Traits
+
