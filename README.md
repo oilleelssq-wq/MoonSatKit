@@ -46,3 +46,7 @@ moon info
 moon fmt
 moon test --target all --deny-warn
 ```
+
+## License
+
+MoonSatKit is licensed under the [Apache License 2.0](LICENSE).
