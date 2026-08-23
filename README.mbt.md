@@ -132,7 +132,7 @@ illumination classification. The reproducible checklist is in
 ```console
 moon info
 moon fmt
-moon test -p oillee/moonsatkit --target all --deny-warn
+moon test -p oilleelssq-wq/moonsatkit --target all --deny-warn
 ```
 
 ## License

@@ -1,11 +1,11 @@
 // MoonSatKit module metadata.
-name = "oillee/moonsatkit"
+name = "oilleelssq-wq/moonsatkit"
 
 version = "0.1.0"
 
 readme = "README.mbt.md"
 
-repository = "https://gitlink.org.cn/oillee/moonsatkit"
+repository = "https://github.com/oilleelssq-wq/MoonSatKit"
 
 license = "Apache-2.0"
 

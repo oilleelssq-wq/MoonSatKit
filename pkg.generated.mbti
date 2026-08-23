@@ -1,5 +1,5 @@
 // Generated using `moon info`, DON'T EDIT IT
-package "oillee/moonsatkit"
+package "oilleelssq-wq/moonsatkit"
 
 import {
   "moonbitlang/core/debug",

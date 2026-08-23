@@ -1,5 +1,5 @@
 // Generated using `moon info`, DON'T EDIT IT
-package "oillee/moonsatkit/web/wasm"
+package "oilleelssq-wq/moonsatkit/web/wasm"
 
 // Values
 pub fn moon_sat_catalog_passes_json(String, Double, Double, Double, String, Int, Double) -> String

@@ -1,5 +1,5 @@
 import {
-  "oillee/moonsatkit" @lib,
+  "oilleelssq-wq/moonsatkit" @lib,
   "moonbitlang/core/env",
 }
 

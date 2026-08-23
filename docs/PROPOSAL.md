@@ -2,7 +2,7 @@
 
 ## 基本信息
 - 项目名称：MoonSatKit（MoonBit 卫星轨道与过境预测工具包）
-- 项目标识：`oillee/moonsatkit`
+- 项目标识：`oilleelssq-wq/moonsatkit`
 - 申报人/主要开发者：oillee
 - GitHub：[github.com/oilleelssq-wq/MoonSatKit](https://github.com/oilleelssq-wq/MoonSatKit)
 - GitLink：[gitlink.org.cn/oillee/moonsatkit](https://gitlink.org.cn/oillee/moonsatkit)

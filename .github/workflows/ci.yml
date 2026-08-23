@@ -23,7 +23,7 @@ jobs:
         run: moon check --deny-warn
 
       - name: Run tests
-        run: moon test -p oillee/moonsatkit --target all --deny-warn
+        run: moon test -p oilleelssq-wq/moonsatkit --target all --deny-warn
 
       - name: Check browser adapter
         run: moon check web/wasm --target wasm --deny-warn

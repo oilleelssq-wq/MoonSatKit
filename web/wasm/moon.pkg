@@ -3,7 +3,7 @@ pkgtype(kind: "foreign_library")
 supported_targets = "+js+wasm+wasm-gc"
 
 import {
-  "oillee/moonsatkit" @lib,
+  "oilleelssq-wq/moonsatkit" @lib,
 }
 
 options(

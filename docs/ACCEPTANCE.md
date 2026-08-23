@@ -35,7 +35,7 @@ Web 可视化工具，不用于真实航天器安全决策。
 ```console
 moon fmt --check
 moon check --deny-warn
-moon test -p oillee/moonsatkit --target all --deny-warn
+moon test -p oilleelssq-wq/moonsatkit --target all --deny-warn
 moon check web/wasm --target wasm --deny-warn
 moon build web/wasm --target js --release
 node --check web/app.js
