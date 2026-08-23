@@ -1,0 +1,34 @@
+pkgtype(kind: "foreign_library")
+
+supported_targets = "+js+wasm+wasm-gc"
+
+import {
+  "oillee/moonsatkit" @lib,
+}
+
+options(
+  link: {
+    "js": {
+      "format": "esm",
+      "exports": [
+        "moon_sat_validate_tle",
+        "moon_sat_track_geojson",
+        "moon_sat_passes_json",
+      ],
+    },
+    "wasm": {
+      "exports": [
+        "moon_sat_validate_tle",
+        "moon_sat_track_geojson",
+        "moon_sat_passes_json",
+      ],
+    },
+    "wasm-gc": {
+      "exports": [
+        "moon_sat_validate_tle",
+        "moon_sat_track_geojson",
+        "moon_sat_passes_json",
+      ],
+    },
+  },
+)

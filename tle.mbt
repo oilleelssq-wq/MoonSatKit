@@ -131,7 +131,7 @@ fn field_at(
 fn parse_core_tle(line1 : String, line2 : String) -> Result[Tle, SatError] {
   let fields1 = split_fields(line1)
   let fields2 = split_fields(line2)
-  if fields1.length() < 8 || fields2.length() < 7 {
+  if fields1.length() < 9 || fields2.length() < 8 {
     return Err(
       tle_error(
         InvalidFormat,
@@ -203,6 +203,20 @@ fn parse_core_tle(line1 : String, line2 : String) -> Result[Tle, SatError] {
     Ok(value) => value.to_owned()
     Err(error) => return Err(error)
   }
+  let mean_motion_first_derivative = match
+    field_at(fields1, 4, "mean_motion_first_derivative") {
+    Ok(value) => value.to_owned()
+    Err(error) => return Err(error)
+  }
+  let mean_motion_second_derivative = match
+    field_at(fields1, 5, "mean_motion_second_derivative") {
+    Ok(value) => value.to_owned()
+    Err(error) => return Err(error)
+  }
+  let bstar = match field_at(fields1, 6, "bstar") {
+    Ok(value) => value.to_owned()
+    Err(error) => return Err(error)
+  }
   let line1_ok = checksum_ok(line1)
   let line2_ok = checksum_ok(line2)
   Ok({
@@ -216,6 +230,9 @@ fn parse_core_tle(line1 : String, line2 : String) -> Result[Tle, SatError] {
     argument_of_perigee,
     mean_anomaly,
     mean_motion,
+    mean_motion_first_derivative,
+    mean_motion_second_derivative,
+    bstar,
     checksum_line1_ok: line1_ok,
     checksum_line2_ok: line2_ok,
   })

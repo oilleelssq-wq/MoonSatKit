@@ -8,11 +8,61 @@ import {
 // Values
 pub fn days_in_month(Int, Int) -> Int
 
+pub fn ecef_to_eci(Vector3, UtcDateTime) -> Vector3
+
+pub fn ecef_to_eci_state(EcefState) -> OrbitState
+
+pub fn ecef_to_geodetic(Vector3) -> GeodeticPosition
+
+pub fn eci_to_ecef(Vector3, UtcDateTime) -> Vector3
+
+pub fn eci_to_ecef_state(OrbitState) -> EcefState
+
+pub fn geodetic_to_ecef(GeodeticPosition) -> Vector3
+
+pub fn gmst_angle(Double) -> Double
+
+pub fn greenwich_mean_sidereal_time(UtcDateTime) -> Double
+
+pub fn ground_station_to_ecef(GroundStation) -> Vector3
+
 pub fn is_leap_year(Int) -> Bool
+
+pub fn julian_day(UtcDateTime) -> Double
+
+pub fn observe(OrbitState, GroundStation) -> Observation
+
+pub fn observe_ecef(EcefState, GroundStation) -> Observation
+
+pub fn orbit_elements(Tle) -> Result[OrbitElements, SatError]
+
+pub fn orbit_state_geodetic(OrbitState) -> GeodeticPosition
+
+pub fn orbit_state_to_json(OrbitState) -> String
 
 pub fn parse_tle(String, String) -> Result[Tle, SatError]
 
 pub fn parse_utc_datetime(String) -> Result[UtcDateTime, SatError]
+
+pub fn pass_windows_to_csv(Array[PassWindow]) -> String
+
+pub fn pass_windows_to_json(Array[PassWindow]) -> String
+
+pub fn predict_passes(Tle, GroundStation, UtcDateTime, Int, Double) -> Result[Array[PassWindow], SatError]
+
+pub fn predict_passes_from_elements(OrbitElements, GroundStation, UtcDateTime, Int, Double) -> Result[Array[PassWindow], SatError]
+
+pub fn predict_passes_sgp4(Tle, GroundStation, UtcDateTime, Int, Double) -> Result[Array[PassWindow], SatError]
+
+pub fn propagate_sgp4(Tle, UtcDateTime) -> Result[OrbitState, SatError]
+
+pub fn propagate_two_body(OrbitElements, UtcDateTime) -> Result[OrbitState, SatError]
+
+pub fn seconds_between(UtcDateTime, UtcDateTime) -> Double
+
+pub fn sgp4_elements(Tle) -> Result[Sgp4Elements, SatError]
+
+pub fn track_geojson_sgp4(Tle, UtcDateTime, Int, Int) -> Result[String, SatError]
 
 pub fn validate_tle(String, String) -> Result[Tle, SatError]
 
@@ -23,6 +73,18 @@ pub let vallado_00005_line2 : String
 // Errors
 
 // Types and methods
+pub(all) struct EcefState {
+  epoch : UtcDateTime
+  position_km : Vector3
+  velocity_km_s : Vector3
+}
+
+pub(all) struct GeodeticPosition {
+  latitude_deg : Double
+  longitude_deg : Double
+  altitude_km : Double
+}
+
 pub(all) struct GroundStation {
   latitude_deg : Double
   longitude_deg : Double
@@ -36,6 +98,25 @@ pub(all) struct Observation {
   range_rate_km_s : Double
   above_horizon : Bool
 } derive(Eq, @debug.Debug)
+
+pub(all) struct OrbitElements {
+  catalog_number : Int
+  epoch : UtcDateTime
+  epoch_julian_day : Double
+  inclination_deg : Double
+  right_ascension_deg : Double
+  eccentricity : Double
+  argument_of_perigee_deg : Double
+  mean_anomaly_deg : Double
+  mean_motion_rev_per_day : Double
+  mean_motion_rad_per_min : Double
+}
+
+pub(all) struct OrbitState {
+  epoch : UtcDateTime
+  position_km : Vector3
+  velocity_km_s : Vector3
+}
 
 pub(all) struct PassWindow {
   aos : UtcDateTime
@@ -59,9 +140,27 @@ pub(all) enum SatErrorKind {
   InvalidChecksum
   InvalidCatalogNumber
   MismatchedCatalogNumber
+  InvalidTleNumber
+  UnsupportedOrbit
+  PropagationError
   InvalidDateTime
   OutOfRange
 } derive(Eq, @debug.Debug)
+
+pub(all) struct Sgp4Elements {
+  catalog_number : Int
+  epoch : UtcDateTime
+  epoch_julian_day : Double
+  inclination_rad : Double
+  right_ascension_rad : Double
+  eccentricity : Double
+  argument_of_perigee_rad : Double
+  mean_anomaly_rad : Double
+  mean_motion_rad_per_min : Double
+  mean_motion_first_derivative_rev_per_day2 : Double
+  mean_motion_second_derivative_div2_rev_per_day3 : Double
+  bstar : Double
+}
 
 pub(all) struct Tle {
   line1 : String
@@ -74,6 +173,9 @@ pub(all) struct Tle {
   argument_of_perigee : String
   mean_anomaly : String
   mean_motion : String
+  mean_motion_first_derivative : String
+  mean_motion_second_derivative : String
+  bstar : String
   checksum_line1_ok : Bool
   checksum_line2_ok : Bool
 } derive(Eq, @debug.Debug)
@@ -86,6 +188,7 @@ pub(all) struct UtcDateTime {
   minute : Int
   second : Int
 } derive(Compare, Eq, @debug.Debug)
+pub fn UtcDateTime::add_seconds(Self, Int) -> Self
 pub fn UtcDateTime::next_second(Self) -> Self
 pub fn UtcDateTime::to_string(Self) -> String
 

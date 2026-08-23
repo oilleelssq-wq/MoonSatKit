@@ -20,7 +20,7 @@ MoonSatKit 是使用纯 MoonBit 实现的卫星轨道计算工具包，面向航
 - CLI、轨迹数据导出和浏览器 WASM 可视化示例。
 
 ## 当前基础与实施计划
-项目已完成 MoonBit 工程初始化、公共数据类型、UTC 解析、TLE 解析与校验、CLI 基础入口、公开验证样例及自动化测试；现有 9 项测试已在 Native、JavaScript、Wasm 和 Wasm-GC 四个目标通过。后续依次完成时间与地球模型、坐标转换、SGP4 核心、地面观测与过境预测、数据导出、可视化演示和性能基准。
+项目已完成 MoonBit 工程初始化、公共数据类型、UTC 解析、儒略日与恒星时计算、TLE 解析和校验、TLE 数值根数解码、两体 Kepler 预览传播、GMST、ECI/ECEF 状态转换、WGS-84 地理坐标转换、地面站 ENU 观测、近地轨道 SGP4 核心传播、基于两体模型和 SGP4 模型的 AOS/TCA/LOS 过境搜索、JSON/CSV/GeoJSON 结果导出、CLI（TLE 校验、SGP4 传播、过境预测和 GeoJSON 轨迹导出）、Vallado 00005 公开验证样例及自动化测试。当前测试共 32 项，已在 Native、JavaScript、Wasm 和 Wasm-GC 四个后端通过。SGP4 目前明确支持近地轨道，深空轨道返回 UnsupportedOrbit，后续继续补齐 SDP4、官方全轨道测试向量、浏览器可视化演示和性能基准。
 
 ## 预期成果与项目亮点
 预期形成约 4000～7000 行有效 MoonBit 代码、可发布的 Mooncakes 包、完整 API 文档、测试向量、命令行工具和 WASM 演示。项目融合航天动力学、地理信息与数值计算，当前 MoonBit 生态中同类工具稀缺，可体现 MoonBit 多后端复用和数值计算能力，并为卫星轨迹应用提供可复用基础库。

@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#071016">
+  <title>MoonSatKit / Orbit Console</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand-lockup">
+        <div class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></div>
+        <div>
+          <p class="eyebrow">MOONBIT / FLIGHT DYNAMICS</p>
+          <h1>MoonSatKit <span>/ Orbit Console</span></h1>
+        </div>
+      </div>
+      <div class="topbar-meta">
+        <div class="status-chip"><i></i><span id="runtimeStatus">LOCAL SAMPLE</span></div>
+        <div class="utc-readout"><span>UTC</span><strong id="utcClock">--:--:--</strong></div>
+      </div>
+    </header>
+
+    <main class="dashboard">
+      <aside class="sidebar panel-section">
+        <div class="section-heading">
+          <div><span class="section-kicker">01 / INPUT</span><h2>任务参数</h2></div>
+          <button class="icon-button" id="resetButton" title="载入内置样例" aria-label="载入内置样例">↺</button>
+        </div>
+        <label class="field-label" for="tleLine1">TLE LINE 1</label>
+        <textarea id="tleLine1" spellcheck="false" rows="3">1 00005U 58002B   00179.78495062  .00000023  00000-0  28098-4 0  4753</textarea>
+        <label class="field-label" for="tleLine2">TLE LINE 2</label>
+        <textarea id="tleLine2" spellcheck="false" rows="3">2 00005  34.2682 348.7242 1859667 331.7664  19.3264 10.82419157413667</textarea>
+        <button class="action-button" id="validateButton"><span>✓</span> 校验 TLE</button>
+        <p class="validation-message" id="validationMessage">样例 TLE 已通过校验和检查</p>
+
+        <div class="divider"></div>
+        <span class="section-kicker">GROUND STATION</span>
+        <div class="station-grid">
+          <label><span>纬度</span><input id="stationLat" value="31.2304" inputmode="decimal"></label>
+          <label><span>经度</span><input id="stationLon" value="121.4737" inputmode="decimal"></label>
+          <label><span>海拔 m</span><input id="stationAlt" value="10" inputmode="decimal"></label>
+        </div>
+        <p class="field-hint">上海 · 东八区 / WGS-84</p>
+
+        <div class="divider"></div>
+        <span class="section-kicker">WINDOW</span>
+        <label class="field-label" for="fromTime">起始时间</label>
+        <input class="wide-input" id="fromTime" value="2026-08-23 12:00:00">
+        <div class="inline-fields">
+          <label><span>轨迹时长</span><select id="durationValue"><option value="1">1 h</option><option value="6">6 h</option><option value="12">12 h</option><option value="24" selected>24 h</option></select></label>
+          <label><span>采样步长</span><select id="stepValue"><option value="60">60 s</option><option value="300" selected>300 s</option><option value="600">600 s</option></select></label>
+        </div>
+        <button class="action-button calculate-button" id="calculateButton"><span>▶</span> 计算轨迹</button>
+
+        <div class="sidebar-footer">
+          <label class="file-button" for="geojsonFile"><span>＋</span> 导入 GeoJSON</label>
+          <input id="geojsonFile" type="file" accept=".json,.geojson,application/geo+json,application/json" hidden>
+          <button class="ghost-button" id="downloadButton" title="下载当前轨迹 GeoJSON">↓ 导出轨迹</button>
+        </div>
+      </aside>
+
+      <section class="main-stage">
+        <div class="stage-toolbar">
+          <div><span class="section-kicker">ORBITAL GROUND TRACK</span><h2>地面轨迹 <span id="sourceLabel">/ VALLADO 00005</span></h2></div>
+          <div class="toolbar-right"><span class="legend-item"><b class="legend-dot orbit-dot"></b>轨道投影</span><span class="legend-item"><b class="legend-dot station-dot"></b>地面站</span></div>
+        </div>
+        <div class="map-frame">
+          <canvas id="orbitCanvas" aria-label="卫星地面轨迹图"></canvas>
+          <div class="map-overlay top-left"><span>LONGITUDE / LATITUDE</span><strong id="mapSpan">−180° … +180° / −90° … +90°</strong></div>
+          <div class="map-overlay bottom-right"><span>ALTITUDE RANGE</span><strong id="altitudeRange">—</strong></div>
+          <div class="canvas-no-data" id="canvasNoData" hidden>等待 GeoJSON 轨迹数据</div>
+        </div>
+        <div class="timeline-block">
+          <div class="timeline-head"><span class="section-kicker">TIME SCRUBBER</span><strong id="timelineLabel">2026-08-23 12:00:00 UTC</strong><span id="sampleCount">289 samples</span></div>
+          <input id="timeline" type="range" min="0" max="288" value="0" step="1" aria-label="轨迹时间游标">
+          <div class="timeline-scale"><span id="timelineStart">12:00</span><span>18:00</span><span>00:00</span><span>06:00</span><span id="timelineEnd">12:00</span></div>
+        </div>
+        <div class="metric-strip">
+          <div class="metric"><span>当前纬度</span><strong id="currentLat">—</strong><small>deg</small></div>
+          <div class="metric"><span>当前经度</span><strong id="currentLon">—</strong><small>deg</small></div>
+          <div class="metric"><span>轨道高度</span><strong id="currentAlt">—</strong><small>km</small></div>
+          <div class="metric"><span>样例编号</span><strong id="catalogNumber">—</strong><small>NORAD</small></div>
+        </div>
+      </section>
+
+      <aside class="right-rail panel-section">
+        <div class="section-heading"><div><span class="section-kicker">02 / TELEMETRY</span><h2>轨道态势</h2></div><span class="mini-badge" id="orbitBadge">NEAR-EARTH</span></div>
+        <div class="telemetry-card">
+          <div class="telemetry-row"><span>当前状态</span><strong class="accent-green" id="orbitState">TRACKING</strong></div>
+          <div class="telemetry-row"><span>观测地平线</span><strong id="horizonState">—</strong></div>
+          <div class="telemetry-row"><span>数据源</span><strong>MoonBit CLI</strong></div>
+          <div class="telemetry-row"><span>坐标序</span><strong>lon / lat / alt</strong></div>
+        </div>
+        <div class="divider"></div>
+        <div class="section-heading pass-heading"><div><span class="section-kicker">03 / PASS WINDOWS</span><h2>过境窗口</h2></div><span class="count-badge" id="passCount">0</span></div>
+        <label class="filter-label" for="elevationFilter">最低仰角 <output id="elevationOutput">10°</output></label>
+        <input id="elevationFilter" type="range" min="0" max="80" value="10" step="1">
+        <div class="pass-list" id="passList"></div>
+        <p class="rail-note">过境时间由 MoonSatKit SGP4 事件搜索生成。浏览器计算由 MoonBit JS 适配层执行，样例数据仅作为初始或降级数据。</p>
+      </aside>
+    </main>
+
+    <footer class="footer-bar"><span>MOONSATKIT 0.1.0</span><span>APACHE-2.0</span><span id="footerMessage">READY · SAMPLE DATA LOADED</span></footer>
+  </div>
+  <script type="module" src="app.js"></script>
+</body>
+</html>

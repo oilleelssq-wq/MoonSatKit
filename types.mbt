@@ -5,6 +5,9 @@ pub(all) enum SatErrorKind {
   InvalidChecksum
   InvalidCatalogNumber
   MismatchedCatalogNumber
+  InvalidTleNumber
+  UnsupportedOrbit
+  PropagationError
   InvalidDateTime
   OutOfRange
 } derive(Eq, Debug)
@@ -48,6 +51,9 @@ pub(all) struct Tle {
   argument_of_perigee : String
   mean_anomaly : String
   mean_motion : String
+  mean_motion_first_derivative : String
+  mean_motion_second_derivative : String
+  bstar : String
   checksum_line1_ok : Bool
   checksum_line2_ok : Bool
 } derive(Eq, Debug)
@@ -105,6 +111,70 @@ fn pad2(value : Int) -> String {
   } else {
     "\{value}"
   }
+}
+
+///|
+/// Numerical orbital elements decoded from a TLE.
+///
+/// The elements retain the TLE epoch and angular fields in conventional
+/// units. They are suitable for the two-body preview propagator and form the
+/// input boundary for the future SGP4 implementation.
+pub(all) struct OrbitElements {
+  catalog_number : Int
+  epoch : UtcDateTime
+  epoch_julian_day : Double
+  inclination_deg : Double
+  right_ascension_deg : Double
+  eccentricity : Double
+  argument_of_perigee_deg : Double
+  mean_anomaly_deg : Double
+  mean_motion_rev_per_day : Double
+  mean_motion_rad_per_min : Double
+}
+
+///|
+/// Numerical TLE fields required to initialize an SGP4 propagator.
+///
+/// Angles are stored in radians. The derivative fields retain the TLE
+/// conventions: revolutions per day squared and the second derivative divided
+/// by two in revolutions per day cubed. BSTAR is dimensionless.
+pub(all) struct Sgp4Elements {
+  catalog_number : Int
+  epoch : UtcDateTime
+  epoch_julian_day : Double
+  inclination_rad : Double
+  right_ascension_rad : Double
+  eccentricity : Double
+  argument_of_perigee_rad : Double
+  mean_anomaly_rad : Double
+  mean_motion_rad_per_min : Double
+  mean_motion_first_derivative_rev_per_day2 : Double
+  mean_motion_second_derivative_div2_rev_per_day3 : Double
+  bstar : Double
+}
+
+///|
+/// An inertial state expressed in kilometres and kilometres per second.
+pub(all) struct OrbitState {
+  epoch : UtcDateTime
+  position_km : Vector3
+  velocity_km_s : Vector3
+}
+
+///|
+/// A state expressed in the Earth-fixed frame, in kilometres and kilometres per second.
+pub(all) struct EcefState {
+  epoch : UtcDateTime
+  position_km : Vector3
+  velocity_km_s : Vector3
+}
+
+///|
+/// A WGS-84 geodetic position. Longitude is positive east and altitude is in kilometres.
+pub(all) struct GeodeticPosition {
+  latitude_deg : Double
+  longitude_deg : Double
+  altitude_km : Double
 }
 
 ///|

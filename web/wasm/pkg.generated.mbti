@@ -1,0 +1,18 @@
+// Generated using `moon info`, DON'T EDIT IT
+package "oillee/moonsatkit/web/wasm"
+
+// Values
+pub fn moon_sat_passes_json(String, String, Double, Double, Double, String, Int, Double) -> String
+
+pub fn moon_sat_track_geojson(String, String, String, Int, Int) -> String
+
+pub fn moon_sat_validate_tle(String, String) -> String
+
+// Errors
+
+// Types and methods
+
+// Type aliases
+
+// Traits
+

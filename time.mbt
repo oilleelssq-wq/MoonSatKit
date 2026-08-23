@@ -189,6 +189,67 @@ pub fn parse_utc_datetime(text : String) -> Result[UtcDateTime, SatError] {
 }
 
 ///|
+/// Add an integral number of seconds to a UTC civil timestamp.
+///
+/// This helper is intentionally calendar-based, so pass-search event times
+/// remain integer-second UTC values without relying on a platform date API.
+pub fn UtcDateTime::add_seconds(
+  self : UtcDateTime,
+  seconds : Int,
+) -> UtcDateTime {
+  let mut total_seconds = self.hour * 3600 +
+    self.minute * 60 +
+    self.second +
+    seconds
+  let mut day_shift = 0
+  while total_seconds >= 86400 {
+    total_seconds = total_seconds - 86400
+    day_shift = day_shift + 1
+  }
+  while total_seconds < 0 {
+    total_seconds = total_seconds + 86400
+    day_shift = day_shift - 1
+  }
+  let mut year = self.year
+  let mut month = self.month
+  let mut day = self.day
+  while day_shift > 0 {
+    day_shift = day_shift - 1
+    day = day + 1
+    if day > days_in_month(year, month) {
+      day = 1
+      if month == 12 {
+        month = 1
+        year = year + 1
+      } else {
+        month = month + 1
+      }
+    }
+  }
+  while day_shift < 0 {
+    day_shift = day_shift + 1
+    day = day - 1
+    if day == 0 {
+      if month == 1 {
+        month = 12
+        year = year - 1
+      } else {
+        month = month - 1
+      }
+      day = days_in_month(year, month)
+    }
+  }
+  {
+    year,
+    month,
+    day,
+    hour: total_seconds / 3600,
+    minute: total_seconds % 3600 / 60,
+    second: total_seconds % 60,
+  }
+}
+
+///|
 pub fn UtcDateTime::next_second(self : UtcDateTime) -> UtcDateTime {
   if self.second < 59 {
     {
@@ -242,4 +303,35 @@ pub fn UtcDateTime::next_second(self : UtcDateTime) -> UtcDateTime {
       { year: self.year + 1, month: 1, day: 1, hour: 0, minute: 0, second: 0 }
     }
   }
+}
+
+///|
+/// Convert a UTC civil timestamp to the astronomical Julian Day.
+///
+/// The result follows the standard convention where 2000-01-01 12:00:00 UTC
+/// is 2451545.0. This helper uses the proleptic Gregorian calendar.
+pub fn julian_day(value : UtcDateTime) -> Double {
+  let month_adjust = (14 - value.month) / 12
+  let adjusted_year = value.year + 4800 - month_adjust
+  let adjusted_month = value.month + 12 * month_adjust - 3
+  let julian_day_number = value.day +
+    (153 * adjusted_month + 2) / 5 +
+    365 * adjusted_year +
+    adjusted_year / 4 -
+    adjusted_year / 100 +
+    adjusted_year / 400 -
+    32045
+  let fraction = (
+      value.hour.to_double() * 3600.0 +
+      value.minute.to_double() * 60.0 +
+      value.second.to_double()
+    ) /
+    86400.0
+  julian_day_number.to_double() - 0.5 + fraction
+}
+
+///|
+/// Return the elapsed seconds from `start` to `end`.
+pub fn seconds_between(start : UtcDateTime, end : UtcDateTime) -> Double {
+  (julian_day(end) - julian_day(start)) * 86400.0
 }
