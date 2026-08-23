@@ -105,6 +105,20 @@ pub(all) struct PassWindow {
 } derive(Eq, Debug)
 
 ///|
+/// Return the visible duration of a pass in integral seconds.
+pub fn PassWindow::duration_seconds(self : PassWindow) -> Int {
+  seconds_between(self.aos, self.los).to_int()
+}
+
+///|
+/// A pass window associated with one entry in a TLE catalog.
+pub(all) struct CatalogPassWindow {
+  name : String
+  catalog_number : Int
+  window : PassWindow
+} derive(Eq, Debug)
+
+///|
 fn pad2(value : Int) -> String {
   if value < 10 {
     "0\{value}"

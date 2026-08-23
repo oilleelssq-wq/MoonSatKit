@@ -29,6 +29,8 @@ handling, near-earth SGP4 propagation, ground-station observation, and pass pred
 - Low-precision geocentric Sun position and right-ascension/declination output
 - Geometric sunlit, penumbra, and umbra classification for propagated states
 - CSV pass-window export and GeoJSON SGP4 ground-track export
+- Named two-line/three-line TLE catalog parsing and multi-satellite pass prediction
+- Pass duration reporting and browser catalog-pass JSON API
 - Vector, station, observation, and pass data types
 - CLI entry points for TLE validation and timestamp parsing
 
@@ -89,6 +91,16 @@ let passes = @moonsatkit.predict_passes_sgp4(
 ```
 
 `predict_passes` remains the transparent two-body compatibility API.
+
+Parse a named TLE catalog and predict all satellite passes:
+
+```moon
+let catalog = @moonsatkit.parse_tle_catalog(catalog_text).unwrap()
+let catalog_passes = @moonsatkit.predict_catalog_passes_sgp4(
+  catalog, station, from=start, duration_hours=24, minimum_elevation_deg=10.0,
+).unwrap()
+let json = @moonsatkit.catalog_pass_windows_to_json(catalog_passes)
+```
 `predict_passes_sgp4` uses the near-earth SGP4 propagator and returns
 integer-second AOS, TCA, and LOS timestamps plus the maximum elevation.
 Deep-space TLEs currently return `UnsupportedOrbit` until SDP4 is added.
@@ -138,4 +150,4 @@ cd web
 python -m http.server 4173
 ```
 
-Then open `http://127.0.0.1:4173/`. The page loads the self-contained MoonBit JS adapter at `web/moonsatkit.js`, which exposes TLE validation, SGP4 GeoJSON track generation, and pass-window prediction. Edit the TLE, station, start time, duration, or sample step and press `计算轨迹` to run the real near-earth SGP4 implementation in the browser. The bundled Vallado 00005 data remains available as the initial view and fallback demonstration when the adapter cannot be loaded. Rebuild the adapter after MoonBit changes with `./web/build.ps1` (or run `moon build web/wasm --target js --release` and copy `_build/js/release/build/web/wasm/wasm.js` to `web/moonsatkit.js`).
+Then open `http://127.0.0.1:4173/`. The page loads the self-contained MoonBit JS adapter at `web/moonsatkit.js`, which exposes TLE validation, SGP4 GeoJSON track generation, single-satellite pass-window prediction, and named catalog pass prediction through `moon_sat_catalog_passes_json`. Edit the TLE, station, start time, duration, or sample step and press `计算轨迹` to run the real near-earth SGP4 implementation in the browser. The bundled Vallado 00005 data remains available as the initial view and fallback demonstration when the adapter cannot be loaded. Rebuild the adapter after MoonBit changes with `./web/build.ps1` (or run `moon build web/wasm --target js --release` and copy `_build/js/release/build/web/wasm/wasm.js` to `web/moonsatkit.js`).

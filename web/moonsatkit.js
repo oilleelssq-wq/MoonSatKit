@@ -299,6 +299,31 @@ function _M0DTPC16result6ResultGsRP26oillee10moonsatkit8SatErrorE2Ok(param0) {
   this._0 = param0;
 }
 _M0DTPC16result6ResultGsRP26oillee10moonsatkit8SatErrorE2Ok.prototype.$tag = 1;
+function _M0DTPC16result6ResultGRPB5ArrayGRP26oillee10moonsatkit15TleCatalogEntryERP26oillee10moonsatkit8SatErrorE3Err(param0) {
+  this._0 = param0;
+}
+_M0DTPC16result6ResultGRPB5ArrayGRP26oillee10moonsatkit15TleCatalogEntryERP26oillee10moonsatkit8SatErrorE3Err.prototype.$tag = 0;
+function _M0DTPC16result6ResultGRPB5ArrayGRP26oillee10moonsatkit15TleCatalogEntryERP26oillee10moonsatkit8SatErrorE2Ok(param0) {
+  this._0 = param0;
+}
+_M0DTPC16result6ResultGRPB5ArrayGRP26oillee10moonsatkit15TleCatalogEntryERP26oillee10moonsatkit8SatErrorE2Ok.prototype.$tag = 1;
+function _M0TP26oillee10moonsatkit15TleCatalogEntry(param0, param1) {
+  this.name = param0;
+  this.tle = param1;
+}
+function _M0DTPC16result6ResultGRPB5ArrayGRP26oillee10moonsatkit17CatalogPassWindowERP26oillee10moonsatkit8SatErrorE3Err(param0) {
+  this._0 = param0;
+}
+_M0DTPC16result6ResultGRPB5ArrayGRP26oillee10moonsatkit17CatalogPassWindowERP26oillee10moonsatkit8SatErrorE3Err.prototype.$tag = 0;
+function _M0DTPC16result6ResultGRPB5ArrayGRP26oillee10moonsatkit17CatalogPassWindowERP26oillee10moonsatkit8SatErrorE2Ok(param0) {
+  this._0 = param0;
+}
+_M0DTPC16result6ResultGRPB5ArrayGRP26oillee10moonsatkit17CatalogPassWindowERP26oillee10moonsatkit8SatErrorE2Ok.prototype.$tag = 1;
+function _M0TP26oillee10moonsatkit17CatalogPassWindow(param0, param1, param2) {
+  this.name = param0;
+  this.catalog_number = param1;
+  this.window = param2;
+}
 function _M0TP26oillee10moonsatkit13GroundStation(param0, param1, param2) {
   this.latitude_deg = param0;
   this.longitude_deg = param1;
@@ -313,19 +338,24 @@ const _M0MPB4Iter4nextN6constrS9183GcE = 0;
 const _M0MPB4Iter4nextN6constrS9184GcE = 0;
 const _M0MPB4Iter3newN6constrS9191GRPC16string10StringViewE = 0;
 const _M0MPB4Iter3newN6constrS9191GcE = 0;
-const _M0FP26oillee10moonsatkit13split__fieldsN7_2abindS876 = " ";
-const _M0FP26oillee10moonsatkit16parse__core__tleN7_2abindS882 = "1";
-const _M0FP26oillee10moonsatkit16parse__core__tleN7_2abindS883 = "2";
-const _M0FP26oillee10moonsatkit20parse__utc__datetimeN7_2abindS1011 = "Z";
-const _M0FP26oillee10moonsatkit20parse__utc__datetimeN7_2abindS1010 = "T";
-const _M0FP26oillee10moonsatkit20parse__utc__datetimeN7_2abindS1009 = " ";
-const _M0FP26oillee10moonsatkit20parse__utc__datetimeN7_2abindS1008 = "-";
-const _M0FP26oillee10moonsatkit20parse__utc__datetimeN7_2abindS1007 = ":";
+const _M0FP26oillee10moonsatkit13split__fieldsN7_2abindS943 = " ";
+const _M0FP26oillee10moonsatkit16parse__core__tleN7_2abindS949 = "1";
+const _M0FP26oillee10moonsatkit16parse__core__tleN7_2abindS950 = "2";
+const _M0FP26oillee10moonsatkit20parse__utc__datetimeN7_2abindS1078 = "Z";
+const _M0FP26oillee10moonsatkit20parse__utc__datetimeN7_2abindS1077 = "T";
+const _M0FP26oillee10moonsatkit20parse__utc__datetimeN7_2abindS1076 = " ";
+const _M0FP26oillee10moonsatkit20parse__utc__datetimeN7_2abindS1075 = "-";
+const _M0FP26oillee10moonsatkit20parse__utc__datetimeN7_2abindS1074 = ":";
+const _M0FP26oillee10moonsatkit14catalog__linesN7_2abindS1535 = "\n";
+const _M0FP26oillee10moonsatkit14catalog__linesN7_2abindS1524 = "#";
+const _M0FP26oillee10moonsatkit19parse__tle__catalogN7_2abindS1538 = "2 ";
+const _M0FP26oillee10moonsatkit19parse__tle__catalogN7_2abindS1552 = "1 ";
+const _M0FP26oillee10moonsatkit19parse__tle__catalogN7_2abindS1553 = "1 ";
 const _M0FPB18brute__force__findN6constrS9194 = 0;
 const _M0FPB28boyer__moore__horspool__findN6constrS9193 = 0;
-const _M0FP26oillee10moonsatkit17parse__tle__epochN6constrS1466 = 2;
-const _M0FP26oillee10moonsatkit17parse__tle__epochN6constrS1467 = 5;
-const _M0FP26oillee10moonsatkit17sgp4__init__modelN5tupleS1465 = { _0: 0, _1: 0, _2: 0 };
+const _M0FP26oillee10moonsatkit17parse__tle__epochN6constrS1653 = 2;
+const _M0FP26oillee10moonsatkit17parse__tle__epochN6constrS1654 = 5;
+const _M0FP26oillee10moonsatkit17sgp4__init__modelN5tupleS1652 = { _0: 0, _1: 0, _2: 0 };
 function _M0FPC15abort5abortGRPC16string10StringViewE(msg) {
   return $panic();
 }
@@ -340,6 +370,9 @@ function _M0MPB13StringBuilder13write__objectGsE(self, obj) {
 }
 function _M0MPB13StringBuilder13write__objectGdE(self, obj) {
   _M0IP016_24default__implPB4Show6outputGdE(obj, { self: self, method_table: _M0FP092moonbitlang_2fcore_2fbuiltin_2fStringBuilder_24as_24_40moonbitlang_2fcore_2fbuiltin_2eLogger });
+}
+function _M0MPB13StringBuilder13write__objectGcE(self, obj) {
+  _M0IP016_24default__implPB4Show6outputGcE(obj, { self: self, method_table: _M0FP092moonbitlang_2fcore_2fbuiltin_2fStringBuilder_24as_24_40moonbitlang_2fcore_2fbuiltin_2eLogger });
 }
 function _M0MPB13StringBuilder21StringBuilder_2einner(size_hint) {
   return new _M0TPB13StringBuilder("");
@@ -431,6 +464,9 @@ function _M0IP016_24default__implPB4Show6outputGsE(self, logger) {
 }
 function _M0IP016_24default__implPB4Show6outputGdE(self, logger) {
   logger.method_table.method_0(logger.self, _M0IPC16double6DoublePB4Show10to__string(self));
+}
+function _M0IP016_24default__implPB4Show6outputGcE(self, logger) {
+  logger.method_table.method_0(logger.self, _M0IPC14char4CharPB4Show10to__string(self));
 }
 function _M0MPB4Iter4nextGRPC16string10StringViewE(self) {
   const _func = self.f;
@@ -717,6 +753,16 @@ function _M0FPB18brute__force__find(haystack, needle) {
 function _M0MPC16string10StringView4find(self, str) {
   return (str.end - str.start | 0) <= 4 ? _M0FPB18brute__force__find(self, str) : _M0FPB28boyer__moore__horspool__find(self, str);
 }
+function _M0MPC16string10StringView11has__prefix(self, str) {
+  const _bind = _M0MPC16string10StringView4find(self, str);
+  if (_bind === undefined) {
+    return false;
+  } else {
+    const _Some = _bind;
+    const _i = _Some;
+    return _i === 0;
+  }
+}
 function _M0MPC15array5Array11new_2einnerGRPC16string10StringViewE(capacity) {
   return [];
 }
@@ -860,6 +906,27 @@ function _M0MPC16string6String4trim(self, chars$46$opt) {
   }
   return _M0MPC16string6String12trim_2einner(self, chars);
 }
+function _M0MPC16string6String4iter(self) {
+  const len = self.length;
+  const index = new _M0TPB8MutLocalGiE(0);
+  return _M0MPB4Iter3newGcE(() => {
+    if (index.val < len) {
+      const c1 = self.charCodeAt(index.val);
+      if (_M0MPC16uint166UInt1622is__leading__surrogate(c1) && (index.val + 1 | 0) < len) {
+        const c2 = self.charCodeAt(index.val + 1 | 0);
+        if (_M0MPC16uint166UInt1623is__trailing__surrogate(c2)) {
+          const c = _M0FPB32code__point__of__surrogate__pair(c1, c2);
+          index.val = index.val + 2 | 0;
+          return c;
+        }
+      }
+      index.val = index.val + 1 | 0;
+      return c1;
+    } else {
+      return -1;
+    }
+  }, undefined);
+}
 function _M0MPB4Iter3mapGcRPC16string10StringViewE(self, f) {
   return new _M0TPB4IterGRPC16string10StringViewE(() => {
     const _bind = _M0MPB4Iter4nextGcE(self);
@@ -900,6 +967,9 @@ function _M0MPC16string10StringView5split(self, sep) {
       }
     }
   }, undefined);
+}
+function _M0MPC16string6String5split(self, sep) {
+  return _M0MPC16string10StringView5split(new _M0TPC16string10StringView(self, 0, self.length), sep);
 }
 function _M0MPB4Iter9to__arrayGRPC16string10StringViewE(self) {
   const _bind = self.size_hint;
@@ -1046,6 +1116,20 @@ function _M0MP26oillee10moonsatkit11UtcDateTime10to__string(self) {
   _M0MPB13StringBuilder13write__objectGsE(_string_builder, _M0FP26oillee10moonsatkit4pad2(self.second));
   return _string_builder.val;
 }
+function _M0FP26oillee10moonsatkit11julian__day(value) {
+  const month_adjust = (14 - value.month | 0) / 12 | 0;
+  const adjusted_year = (value.year + 4800 | 0) - month_adjust | 0;
+  const adjusted_month = (value.month + (Math.imul(12, month_adjust) | 0) | 0) - 3 | 0;
+  const julian_day_number = (((((value.day + (((Math.imul(153, adjusted_month) | 0) + 2 | 0) / 5 | 0) | 0) + (Math.imul(365, adjusted_year) | 0) | 0) + (adjusted_year / 4 | 0) | 0) - (adjusted_year / 100 | 0) | 0) + (adjusted_year / 400 | 0) | 0) - 32045 | 0;
+  const fraction = ((value.hour + 0) * 3600 + (value.minute + 0) * 60 + (value.second + 0)) / 86400;
+  return julian_day_number + 0 - 0.5 + fraction;
+}
+function _M0FP26oillee10moonsatkit16seconds__between(start, end) {
+  return (_M0FP26oillee10moonsatkit11julian__day(end) - _M0FP26oillee10moonsatkit11julian__day(start)) * 86400;
+}
+function _M0MP26oillee10moonsatkit10PassWindow17duration__seconds(self) {
+  return _M0MPC16double6Double7to__int(_M0FP26oillee10moonsatkit16seconds__between(self.aos, self.los));
+}
 function _M0FP26oillee10moonsatkit10tle__error(kind, line, fragment, message) {
   return _M0MP26oillee10moonsatkit8SatError11new_2einner(kind, message, _M0MPC16string10StringView9to__owned(fragment), line);
 }
@@ -1074,7 +1158,7 @@ function _M0FP26oillee10moonsatkit19parse__tle__decimal(text) {
   return valid.val ? value.val : undefined;
 }
 function _M0FP26oillee10moonsatkit13split__fields(line) {
-  return _M0MPB4Iter9to__arrayGRPC16string10StringViewE(_M0MPB4Iter6filterGRPC16string10StringViewE(_M0MPC16string10StringView5split(_M0MPC16string10StringView4trim(line, undefined), new _M0TPC16string10StringView(_M0FP26oillee10moonsatkit13split__fieldsN7_2abindS876, 0, _M0FP26oillee10moonsatkit13split__fieldsN7_2abindS876.length)), (part) => !((part.end - part.start | 0) === 0)));
+  return _M0MPB4Iter9to__arrayGRPC16string10StringViewE(_M0MPB4Iter6filterGRPC16string10StringViewE(_M0MPC16string10StringView5split(_M0MPC16string10StringView4trim(line, undefined), new _M0TPC16string10StringView(_M0FP26oillee10moonsatkit13split__fieldsN7_2abindS943, 0, _M0FP26oillee10moonsatkit13split__fieldsN7_2abindS943.length)), (part) => !((part.end - part.start | 0) === 0)));
 }
 function _M0FP26oillee10moonsatkit22parse__catalog__number(token) {
   if ((token.end - token.start | 0) === 0) {
@@ -1181,7 +1265,7 @@ function _M0FP26oillee10moonsatkit16parse__core__tle(line1, line2) {
   if (fields1.length < 9 || fields2.length < 8) {
     return new _M0DTPC16result6ResultGRP26oillee10moonsatkit3TleRP26oillee10moonsatkit8SatErrorE3Err(_M0FP26oillee10moonsatkit10tle__error(1, 0, new _M0TPC16string10StringView(line1, 0, line1.length), "TLE lines do not contain enough fields"));
   }
-  if (_M0IP016_24default__implPB2Eq10not__equalGRPC16string10StringViewE(_M0MPC15array5Array2atGRPC16string10StringViewE(fields1, 0), new _M0TPC16string10StringView(_M0FP26oillee10moonsatkit16parse__core__tleN7_2abindS882, 0, _M0FP26oillee10moonsatkit16parse__core__tleN7_2abindS882.length)) || _M0IP016_24default__implPB2Eq10not__equalGRPC16string10StringViewE(_M0MPC15array5Array2atGRPC16string10StringViewE(fields2, 0), new _M0TPC16string10StringView(_M0FP26oillee10moonsatkit16parse__core__tleN7_2abindS883, 0, _M0FP26oillee10moonsatkit16parse__core__tleN7_2abindS883.length))) {
+  if (_M0IP016_24default__implPB2Eq10not__equalGRPC16string10StringViewE(_M0MPC15array5Array2atGRPC16string10StringViewE(fields1, 0), new _M0TPC16string10StringView(_M0FP26oillee10moonsatkit16parse__core__tleN7_2abindS949, 0, _M0FP26oillee10moonsatkit16parse__core__tleN7_2abindS949.length)) || _M0IP016_24default__implPB2Eq10not__equalGRPC16string10StringViewE(_M0MPC15array5Array2atGRPC16string10StringViewE(fields2, 0), new _M0TPC16string10StringView(_M0FP26oillee10moonsatkit16parse__core__tleN7_2abindS950, 0, _M0FP26oillee10moonsatkit16parse__core__tleN7_2abindS950.length))) {
     return new _M0DTPC16result6ResultGRP26oillee10moonsatkit3TleRP26oillee10moonsatkit8SatErrorE3Err(_M0FP26oillee10moonsatkit10tle__error(1, 0, new _M0TPC16string10StringView(line1, 0, line1.length), "TLE lines must begin with 1 and 2"));
   }
   const _bind = _M0FP26oillee10moonsatkit22parse__catalog__number(_M0MPC15array5Array2atGRPC16string10StringViewE(fields1, 1));
@@ -1423,14 +1507,14 @@ function _M0FP26oillee10moonsatkit20parse__utc__datetime(text) {
   if ((trimmed.end - trimmed.start | 0) === 0) {
     return new _M0DTPC16result6ResultGRP26oillee10moonsatkit11UtcDateTimeRP26oillee10moonsatkit8SatErrorE3Err(_M0FP26oillee10moonsatkit11time__error(0, new _M0TPC16string10StringView(text, 0, text.length), "timestamp must not be empty"));
   }
-  const without_z = _M0MPC15array5Array2atGRPC16string10StringViewE(_M0MPB4Iter9to__arrayGRPC16string10StringViewE(_M0MPC16string10StringView5split(trimmed, new _M0TPC16string10StringView(_M0FP26oillee10moonsatkit20parse__utc__datetimeN7_2abindS1011, 0, _M0FP26oillee10moonsatkit20parse__utc__datetimeN7_2abindS1011.length))), 0);
-  const date_time_parts = _M0MPB4Iter9to__arrayGRPC16string10StringViewE(_M0MPB4Iter6filterGRPC16string10StringViewE(_M0MPC16string10StringView5split(without_z, new _M0TPC16string10StringView(_M0FP26oillee10moonsatkit20parse__utc__datetimeN7_2abindS1010, 0, _M0FP26oillee10moonsatkit20parse__utc__datetimeN7_2abindS1010.length)), (part) => !((part.end - part.start | 0) === 0)));
-  const parts = date_time_parts.length === 2 ? date_time_parts : _M0MPB4Iter9to__arrayGRPC16string10StringViewE(_M0MPB4Iter6filterGRPC16string10StringViewE(_M0MPC16string10StringView5split(without_z, new _M0TPC16string10StringView(_M0FP26oillee10moonsatkit20parse__utc__datetimeN7_2abindS1009, 0, _M0FP26oillee10moonsatkit20parse__utc__datetimeN7_2abindS1009.length)), (part) => !((part.end - part.start | 0) === 0)));
+  const without_z = _M0MPC15array5Array2atGRPC16string10StringViewE(_M0MPB4Iter9to__arrayGRPC16string10StringViewE(_M0MPC16string10StringView5split(trimmed, new _M0TPC16string10StringView(_M0FP26oillee10moonsatkit20parse__utc__datetimeN7_2abindS1078, 0, _M0FP26oillee10moonsatkit20parse__utc__datetimeN7_2abindS1078.length))), 0);
+  const date_time_parts = _M0MPB4Iter9to__arrayGRPC16string10StringViewE(_M0MPB4Iter6filterGRPC16string10StringViewE(_M0MPC16string10StringView5split(without_z, new _M0TPC16string10StringView(_M0FP26oillee10moonsatkit20parse__utc__datetimeN7_2abindS1077, 0, _M0FP26oillee10moonsatkit20parse__utc__datetimeN7_2abindS1077.length)), (part) => !((part.end - part.start | 0) === 0)));
+  const parts = date_time_parts.length === 2 ? date_time_parts : _M0MPB4Iter9to__arrayGRPC16string10StringViewE(_M0MPB4Iter6filterGRPC16string10StringViewE(_M0MPC16string10StringView5split(without_z, new _M0TPC16string10StringView(_M0FP26oillee10moonsatkit20parse__utc__datetimeN7_2abindS1076, 0, _M0FP26oillee10moonsatkit20parse__utc__datetimeN7_2abindS1076.length)), (part) => !((part.end - part.start | 0) === 0)));
   if (parts.length !== 2) {
     return new _M0DTPC16result6ResultGRP26oillee10moonsatkit11UtcDateTimeRP26oillee10moonsatkit8SatErrorE3Err(_M0FP26oillee10moonsatkit11time__error(8, new _M0TPC16string10StringView(text, 0, text.length), "timestamp must use YYYY-MM-DDTHH:MM[:SS] format"));
   }
-  const date_parts = _M0MPB4Iter9to__arrayGRPC16string10StringViewE(_M0MPC16string10StringView5split(_M0MPC15array5Array2atGRPC16string10StringViewE(parts, 0), new _M0TPC16string10StringView(_M0FP26oillee10moonsatkit20parse__utc__datetimeN7_2abindS1008, 0, _M0FP26oillee10moonsatkit20parse__utc__datetimeN7_2abindS1008.length)));
-  const time_parts = _M0MPB4Iter9to__arrayGRPC16string10StringViewE(_M0MPC16string10StringView5split(_M0MPC15array5Array2atGRPC16string10StringViewE(parts, 1), new _M0TPC16string10StringView(_M0FP26oillee10moonsatkit20parse__utc__datetimeN7_2abindS1007, 0, _M0FP26oillee10moonsatkit20parse__utc__datetimeN7_2abindS1007.length)));
+  const date_parts = _M0MPB4Iter9to__arrayGRPC16string10StringViewE(_M0MPC16string10StringView5split(_M0MPC15array5Array2atGRPC16string10StringViewE(parts, 0), new _M0TPC16string10StringView(_M0FP26oillee10moonsatkit20parse__utc__datetimeN7_2abindS1075, 0, _M0FP26oillee10moonsatkit20parse__utc__datetimeN7_2abindS1075.length)));
+  const time_parts = _M0MPB4Iter9to__arrayGRPC16string10StringViewE(_M0MPC16string10StringView5split(_M0MPC15array5Array2atGRPC16string10StringViewE(parts, 1), new _M0TPC16string10StringView(_M0FP26oillee10moonsatkit20parse__utc__datetimeN7_2abindS1074, 0, _M0FP26oillee10moonsatkit20parse__utc__datetimeN7_2abindS1074.length)));
   if (date_parts.length !== 3) {
     return new _M0DTPC16result6ResultGRP26oillee10moonsatkit11UtcDateTimeRP26oillee10moonsatkit8SatErrorE3Err(_M0FP26oillee10moonsatkit11time__error(8, _M0MPC15array5Array2atGRPC16string10StringViewE(parts, 0), "timestamp date must use YYYY-MM-DD format"));
   }
@@ -1559,14 +1643,6 @@ function _M0MP26oillee10moonsatkit11UtcDateTime12add__seconds(self, seconds) {
   }
   return new _M0TP26oillee10moonsatkit11UtcDateTime(year, month, day, total_seconds / 3600 | 0, (total_seconds % 3600 | 0) / 60 | 0, total_seconds % 60 | 0);
 }
-function _M0FP26oillee10moonsatkit11julian__day(value) {
-  const month_adjust = (14 - value.month | 0) / 12 | 0;
-  const adjusted_year = (value.year + 4800 | 0) - month_adjust | 0;
-  const adjusted_month = (value.month + (Math.imul(12, month_adjust) | 0) | 0) - 3 | 0;
-  const julian_day_number = (((((value.day + (((Math.imul(153, adjusted_month) | 0) + 2 | 0) / 5 | 0) | 0) + (Math.imul(365, adjusted_year) | 0) | 0) + (adjusted_year / 4 | 0) | 0) - (adjusted_year / 100 | 0) | 0) + (adjusted_year / 400 | 0) | 0) - 32045 | 0;
-  const fraction = ((value.hour + 0) * 3600 + (value.minute + 0) * 60 + (value.second + 0)) / 86400;
-  return julian_day_number + 0 - 0.5 + fraction;
-}
 function _M0FP26oillee10moonsatkit11sgp4__error(message) {
   return _M0MP26oillee10moonsatkit8SatError11new_2einner(7, message, "", 0);
 }
@@ -1652,7 +1728,7 @@ function _M0FP26oillee10moonsatkit17sgp4__init__model(elements) {
   const x7thm1 = 7 * cosio2 - 1;
   let d2_d3_d4;
   if (isimp) {
-    d2_d3_d4 = _M0FP26oillee10moonsatkit17sgp4__init__modelN5tupleS1465;
+    d2_d3_d4 = _M0FP26oillee10moonsatkit17sgp4__init__modelN5tupleS1652;
   } else {
     const cc1sq = cc1 * cc1;
     const d2 = 4 * ao * tsi * cc1sq;
@@ -1715,8 +1791,8 @@ function _M0FP26oillee10moonsatkit17parse__tle__epoch(epoch) {
   if (epoch.length < 8) {
     return new _M0DTPC16result6ResultGURP26oillee10moonsatkit11UtcDateTimedERP26oillee10moonsatkit8SatErrorE3Err(_M0MP26oillee10moonsatkit8SatError11new_2einner(5, "TLE epoch must use YYDDD.dddddddd format", epoch, 0));
   }
-  const year_text = _M0MPC16string6String12view_2einner(epoch, 0, _M0FP26oillee10moonsatkit17parse__tle__epochN6constrS1466);
-  const day_text = _M0MPC16string6String12view_2einner(epoch, 2, _M0FP26oillee10moonsatkit17parse__tle__epochN6constrS1467);
+  const year_text = _M0MPC16string6String12view_2einner(epoch, 0, _M0FP26oillee10moonsatkit17parse__tle__epochN6constrS1653);
+  const day_text = _M0MPC16string6String12view_2einner(epoch, 2, _M0FP26oillee10moonsatkit17parse__tle__epochN6constrS1654);
   const fraction_text = _M0MPC16string6String12view_2einner(epoch, 6, undefined);
   const _bind = _M0FP26oillee10moonsatkit14parse__decimal(year_text);
   let year_short;
@@ -2595,15 +2671,99 @@ function _M0FP26oillee10moonsatkit23pass__windows__to__json(passes) {
       }
       first = false;
       const _tmp$2 = output;
-      const _string_builder = _M0MPB13StringBuilder21StringBuilder_2einner(53);
+      const _string_builder = _M0MPB13StringBuilder21StringBuilder_2einner(73);
       _M0IPB13StringBuilderPB6Logger13write__string(_string_builder, "{\"aos\":\"");
       _M0MPB13StringBuilder13write__objectGsE(_string_builder, _M0MP26oillee10moonsatkit11UtcDateTime10to__string(pass.aos));
       _M0IPB13StringBuilderPB6Logger13write__string(_string_builder, "\",\"tca\":\"");
       _M0MPB13StringBuilder13write__objectGsE(_string_builder, _M0MP26oillee10moonsatkit11UtcDateTime10to__string(pass.tca));
       _M0IPB13StringBuilderPB6Logger13write__string(_string_builder, "\",\"los\":\"");
       _M0MPB13StringBuilder13write__objectGsE(_string_builder, _M0MP26oillee10moonsatkit11UtcDateTime10to__string(pass.los));
-      _M0IPB13StringBuilderPB6Logger13write__string(_string_builder, "\",\"maximum_elevation_deg\":");
+      _M0IPB13StringBuilderPB6Logger13write__string(_string_builder, "\",\"duration_seconds\":");
+      _M0MPB13StringBuilder13write__objectGiE(_string_builder, _M0MP26oillee10moonsatkit10PassWindow17duration__seconds(pass));
+      _M0IPB13StringBuilderPB6Logger13write__string(_string_builder, ",\"maximum_elevation_deg\":");
       _M0MPB13StringBuilder13write__objectGdE(_string_builder, pass.maximum_elevation_deg);
+      _M0IPB13StringBuilderPB6Logger13write__string(_string_builder, "}");
+      output = `${_tmp$2}${_string_builder.val}`;
+      _tmp = _ + 1 | 0;
+      continue;
+    } else {
+      break;
+    }
+  }
+  return `${output}]`;
+}
+function _M0FP26oillee10moonsatkit12json__escape(value) {
+  let output = "";
+  const _it = _M0MPC16string6String4iter(value);
+  while (true) {
+    const _bind = _M0MPB4Iter4nextGcE(_it);
+    if (_bind === -1) {
+      break;
+    } else {
+      const _Some = _bind;
+      const _char = _Some;
+      switch (_char) {
+        case 34: {
+          output = `${output}\\\"`;
+          break;
+        }
+        case 92: {
+          output = `${output}\\\\`;
+          break;
+        }
+        case 10: {
+          output = `${output}\\n`;
+          break;
+        }
+        case 13: {
+          output = `${output}\\r`;
+          break;
+        }
+        case 9: {
+          output = `${output}\\t`;
+          break;
+        }
+        default: {
+          const _tmp = output;
+          const _string_builder = _M0MPB13StringBuilder21StringBuilder_2einner(0);
+          _M0MPB13StringBuilder13write__objectGcE(_string_builder, _char);
+          output = `${_tmp}${_string_builder.val}`;
+        }
+      }
+      continue;
+    }
+  }
+  return output;
+}
+function _M0FP26oillee10moonsatkit32catalog__pass__windows__to__json(passes) {
+  let output = "[";
+  let first = true;
+  const _bind = passes.length;
+  let _tmp = 0;
+  while (true) {
+    const _ = _tmp;
+    if (_ < _bind) {
+      const pass = passes[_];
+      if (!first) {
+        output = `${output},`;
+      }
+      first = false;
+      const _tmp$2 = output;
+      const _string_builder = _M0MPB13StringBuilder21StringBuilder_2einner(101);
+      _M0IPB13StringBuilderPB6Logger13write__string(_string_builder, "{\"name\":\"");
+      _M0MPB13StringBuilder13write__objectGsE(_string_builder, _M0FP26oillee10moonsatkit12json__escape(pass.name));
+      _M0IPB13StringBuilderPB6Logger13write__string(_string_builder, "\",\"catalog_number\":");
+      _M0MPB13StringBuilder13write__objectGiE(_string_builder, pass.catalog_number);
+      _M0IPB13StringBuilderPB6Logger13write__string(_string_builder, ",\"aos\":\"");
+      _M0MPB13StringBuilder13write__objectGsE(_string_builder, _M0MP26oillee10moonsatkit11UtcDateTime10to__string(pass.window.aos));
+      _M0IPB13StringBuilderPB6Logger13write__string(_string_builder, "\",\"tca\":\"");
+      _M0MPB13StringBuilder13write__objectGsE(_string_builder, _M0MP26oillee10moonsatkit11UtcDateTime10to__string(pass.window.tca));
+      _M0IPB13StringBuilderPB6Logger13write__string(_string_builder, "\",\"los\":\"");
+      _M0MPB13StringBuilder13write__objectGsE(_string_builder, _M0MP26oillee10moonsatkit11UtcDateTime10to__string(pass.window.los));
+      _M0IPB13StringBuilderPB6Logger13write__string(_string_builder, "\",\"duration_seconds\":");
+      _M0MPB13StringBuilder13write__objectGiE(_string_builder, _M0MP26oillee10moonsatkit10PassWindow17duration__seconds(pass.window));
+      _M0IPB13StringBuilderPB6Logger13write__string(_string_builder, ",\"maximum_elevation_deg\":");
+      _M0MPB13StringBuilder13write__objectGdE(_string_builder, pass.window.maximum_elevation_deg);
       _M0IPB13StringBuilderPB6Logger13write__string(_string_builder, "}");
       output = `${_tmp$2}${_string_builder.val}`;
       _tmp = _ + 1 | 0;
@@ -2671,6 +2831,146 @@ function _M0FP26oillee10moonsatkit20track__geojson__sgp4(tle, from, duration_sec
   _M0MPB13StringBuilder13write__objectGsE(_string_builder, coordinates);
   _M0IPB13StringBuilderPB6Logger13write__string(_string_builder, "]}}");
   return new _M0DTPC16result6ResultGsRP26oillee10moonsatkit8SatErrorE2Ok(_string_builder.val);
+}
+function _M0FP26oillee10moonsatkit14catalog__error(line, message, fragment) {
+  return _M0MP26oillee10moonsatkit8SatError11new_2einner(1, message, fragment, line);
+}
+function _M0FP26oillee10moonsatkit14catalog__lines(text) {
+  const result = [];
+  let line_number = 0;
+  const _it = _M0MPC16string6String5split(text, new _M0TPC16string10StringView(_M0FP26oillee10moonsatkit14catalog__linesN7_2abindS1535, 0, _M0FP26oillee10moonsatkit14catalog__linesN7_2abindS1535.length));
+  while (true) {
+    const _bind = _M0MPB4Iter4nextGRPC16string10StringViewE(_it);
+    if (_bind === undefined) {
+      break;
+    } else {
+      const _Some = _bind;
+      const _line = _Some;
+      line_number = line_number + 1 | 0;
+      const value = _M0MPC16string10StringView9to__owned(_M0MPC16string10StringView4trim(_line, undefined));
+      if (!(value === "") && !_M0MPC16string10StringView11has__prefix(_M0MPC16string6String12view_2einner(value, 0, undefined), new _M0TPC16string10StringView(_M0FP26oillee10moonsatkit14catalog__linesN7_2abindS1524, 0, _M0FP26oillee10moonsatkit14catalog__linesN7_2abindS1524.length))) {
+        _M0MPC15array5Array4pushGRP26oillee10moonsatkit10PassWindowE(result, { _0: line_number, _1: value });
+      }
+      continue;
+    }
+  }
+  return result;
+}
+function _M0FP26oillee10moonsatkit22default__catalog__name(tle) {
+  const _string_builder = _M0MPB13StringBuilder21StringBuilder_2einner(6);
+  _M0IPB13StringBuilderPB6Logger13write__string(_string_builder, "NORAD ");
+  _M0MPB13StringBuilder13write__objectGiE(_string_builder, tle.catalog_number);
+  return _string_builder.val;
+}
+function _M0FP26oillee10moonsatkit19parse__tle__catalog(text) {
+  const lines = _M0FP26oillee10moonsatkit14catalog__lines(text);
+  if (lines.length === 0) {
+    return new _M0DTPC16result6ResultGRPB5ArrayGRP26oillee10moonsatkit15TleCatalogEntryERP26oillee10moonsatkit8SatErrorE3Err(_M0MP26oillee10moonsatkit8SatError11new_2einner(0, "TLE catalog must not be empty", "", 0));
+  }
+  const entries = [];
+  let index = 0;
+  while (true) {
+    if (index < lines.length) {
+      const _bind = _M0MPC15array5Array2atGRPC16string10StringViewE(lines, index);
+      const _line_number = _bind._0;
+      const _first = _bind._1;
+      let name;
+      let line1_number;
+      let line1;
+      _L: {
+        if (_M0MPC16string10StringView11has__prefix(_M0MPC16string6String12view_2einner(_first, 0, undefined), new _M0TPC16string10StringView(_M0FP26oillee10moonsatkit19parse__tle__catalogN7_2abindS1552, 0, _M0FP26oillee10moonsatkit19parse__tle__catalogN7_2abindS1552.length))) {
+          name = "";
+          line1_number = _line_number;
+          line1 = _first;
+          break _L;
+        } else {
+          index = index + 1 | 0;
+          if (index >= lines.length) {
+            return new _M0DTPC16result6ResultGRPB5ArrayGRP26oillee10moonsatkit15TleCatalogEntryERP26oillee10moonsatkit8SatErrorE3Err(_M0FP26oillee10moonsatkit14catalog__error(_line_number, "catalog name is missing TLE lines", _first));
+          }
+          const _bind$2 = _M0MPC15array5Array2atGRPC16string10StringViewE(lines, index);
+          const _number = _bind$2._0;
+          const _value = _bind$2._1;
+          if (!_M0MPC16string10StringView11has__prefix(_M0MPC16string6String12view_2einner(_value, 0, undefined), new _M0TPC16string10StringView(_M0FP26oillee10moonsatkit19parse__tle__catalogN7_2abindS1553, 0, _M0FP26oillee10moonsatkit19parse__tle__catalogN7_2abindS1553.length))) {
+            return new _M0DTPC16result6ResultGRPB5ArrayGRP26oillee10moonsatkit15TleCatalogEntryERP26oillee10moonsatkit8SatErrorE3Err(_M0FP26oillee10moonsatkit14catalog__error(_number, "expected TLE line 1 after catalog name", _value));
+          }
+          name = _first;
+          line1_number = _number;
+          line1 = _value;
+          break _L;
+        }
+      }
+      index = index + 1 | 0;
+      if (index >= lines.length) {
+        return new _M0DTPC16result6ResultGRPB5ArrayGRP26oillee10moonsatkit15TleCatalogEntryERP26oillee10moonsatkit8SatErrorE3Err(_M0FP26oillee10moonsatkit14catalog__error(line1_number, "TLE line 2 is missing", line1));
+      }
+      const _bind$2 = _M0MPC15array5Array2atGRPC16string10StringViewE(lines, index);
+      const _line2_number = _bind$2._0;
+      const _line2 = _bind$2._1;
+      if (!_M0MPC16string10StringView11has__prefix(_M0MPC16string6String12view_2einner(_line2, 0, undefined), new _M0TPC16string10StringView(_M0FP26oillee10moonsatkit19parse__tle__catalogN7_2abindS1538, 0, _M0FP26oillee10moonsatkit19parse__tle__catalogN7_2abindS1538.length))) {
+        return new _M0DTPC16result6ResultGRPB5ArrayGRP26oillee10moonsatkit15TleCatalogEntryERP26oillee10moonsatkit8SatErrorE3Err(_M0FP26oillee10moonsatkit14catalog__error(_line2_number, "expected TLE line 2", _line2));
+      }
+      const _bind$3 = _M0FP26oillee10moonsatkit13validate__tle(line1, _line2);
+      let tle;
+      if (_bind$3.$tag === 1) {
+        const _Ok = _bind$3;
+        tle = _Ok._0;
+      } else {
+        const _Err = _bind$3;
+        const _error = _Err._0;
+        const _string_builder = _M0MPB13StringBuilder21StringBuilder_2einner(27);
+        _M0IPB13StringBuilderPB6Logger13write__string(_string_builder, "invalid TLE catalog entry: ");
+        _M0MPB13StringBuilder13write__objectGsE(_string_builder, _M0MP26oillee10moonsatkit8SatError10to__string(_error));
+        return new _M0DTPC16result6ResultGRPB5ArrayGRP26oillee10moonsatkit15TleCatalogEntryERP26oillee10moonsatkit8SatErrorE3Err(_M0FP26oillee10moonsatkit14catalog__error(line1_number, _string_builder.val, line1));
+      }
+      const display_name = name === "" ? _M0FP26oillee10moonsatkit22default__catalog__name(tle) : name;
+      _M0MPC15array5Array4pushGRP26oillee10moonsatkit10PassWindowE(entries, new _M0TP26oillee10moonsatkit15TleCatalogEntry(display_name, tle));
+      index = index + 1 | 0;
+      continue;
+    } else {
+      break;
+    }
+  }
+  return new _M0DTPC16result6ResultGRPB5ArrayGRP26oillee10moonsatkit15TleCatalogEntryERP26oillee10moonsatkit8SatErrorE2Ok(entries);
+}
+function _M0FP26oillee10moonsatkit30predict__catalog__passes__sgp4(entries, station, from, duration_hours, minimum_elevation_deg) {
+  const result = [];
+  const _bind = entries.length;
+  let _tmp = 0;
+  while (true) {
+    const _ = _tmp;
+    if (_ < _bind) {
+      const entry = entries[_];
+      const _bind$2 = _M0FP26oillee10moonsatkit21predict__passes__sgp4(entry.tle, station, from, duration_hours, minimum_elevation_deg);
+      let windows;
+      if (_bind$2.$tag === 1) {
+        const _Ok = _bind$2;
+        windows = _Ok._0;
+      } else {
+        const _Err = _bind$2;
+        const _error = _Err._0;
+        return new _M0DTPC16result6ResultGRPB5ArrayGRP26oillee10moonsatkit17CatalogPassWindowERP26oillee10moonsatkit8SatErrorE3Err(_error);
+      }
+      const _bind$3 = windows.length;
+      let _tmp$2 = 0;
+      while (true) {
+        const _$2 = _tmp$2;
+        if (_$2 < _bind$3) {
+          const window = windows[_$2];
+          _M0MPC15array5Array4pushGRP26oillee10moonsatkit10PassWindowE(result, new _M0TP26oillee10moonsatkit17CatalogPassWindow(entry.name, entry.tle.catalog_number, window));
+          _tmp$2 = _$2 + 1 | 0;
+          continue;
+        } else {
+          break;
+        }
+      }
+      _tmp = _ + 1 | 0;
+      continue;
+    } else {
+      break;
+    }
+  }
+  return new _M0DTPC16result6ResultGRPB5ArrayGRP26oillee10moonsatkit17CatalogPassWindowERP26oillee10moonsatkit8SatErrorE2Ok(result);
 }
 function _M0FP46oillee10moonsatkit3web4wasm11error__json(error) {
   const _string_builder = _M0MPB13StringBuilder21StringBuilder_2einner(23);
@@ -2791,4 +3091,37 @@ function _M0FP46oillee10moonsatkit3web4wasm24moon__sat__eclipse__json(line1, lin
     return _M0FP46oillee10moonsatkit3web4wasm11error__json(_error);
   }
 }
-export { _M0FP46oillee10moonsatkit3web4wasm24moon__sat__validate__tle as moon_sat_validate_tle, _M0FP46oillee10moonsatkit3web4wasm25moon__sat__track__geojson as moon_sat_track_geojson, _M0FP46oillee10moonsatkit3web4wasm23moon__sat__passes__json as moon_sat_passes_json, _M0FP46oillee10moonsatkit3web4wasm24moon__sat__eclipse__json as moon_sat_eclipse_json }
+function _M0FP46oillee10moonsatkit3web4wasm32moon__sat__catalog__passes__json(catalog_text, station_latitude_deg, station_longitude_deg, station_altitude_m, from_text, duration_hours, minimum_elevation_deg) {
+  const _bind = _M0FP26oillee10moonsatkit19parse__tle__catalog(catalog_text);
+  let entries;
+  if (_bind.$tag === 1) {
+    const _Ok = _bind;
+    entries = _Ok._0;
+  } else {
+    const _Err = _bind;
+    const _error = _Err._0;
+    return _M0FP46oillee10moonsatkit3web4wasm11error__json(_error);
+  }
+  const _bind$2 = _M0FP26oillee10moonsatkit20parse__utc__datetime(from_text);
+  let from;
+  if (_bind$2.$tag === 1) {
+    const _Ok = _bind$2;
+    from = _Ok._0;
+  } else {
+    const _Err = _bind$2;
+    const _error = _Err._0;
+    return _M0FP46oillee10moonsatkit3web4wasm11error__json(_error);
+  }
+  const station = new _M0TP26oillee10moonsatkit13GroundStation(station_latitude_deg, station_longitude_deg, station_altitude_m);
+  const _bind$3 = _M0FP26oillee10moonsatkit30predict__catalog__passes__sgp4(entries, station, from, duration_hours, minimum_elevation_deg);
+  if (_bind$3.$tag === 1) {
+    const _Ok = _bind$3;
+    const _passes = _Ok._0;
+    return `{\"ok\":true,\"passes\":${_M0FP26oillee10moonsatkit32catalog__pass__windows__to__json(_passes)}}`;
+  } else {
+    const _Err = _bind$3;
+    const _error = _Err._0;
+    return _M0FP46oillee10moonsatkit3web4wasm11error__json(_error);
+  }
+}
+export { _M0FP46oillee10moonsatkit3web4wasm24moon__sat__validate__tle as moon_sat_validate_tle, _M0FP46oillee10moonsatkit3web4wasm25moon__sat__track__geojson as moon_sat_track_geojson, _M0FP46oillee10moonsatkit3web4wasm23moon__sat__passes__json as moon_sat_passes_json, _M0FP46oillee10moonsatkit3web4wasm24moon__sat__eclipse__json as moon_sat_eclipse_json, _M0FP46oillee10moonsatkit3web4wasm32moon__sat__catalog__passes__json as moon_sat_catalog_passes_json }

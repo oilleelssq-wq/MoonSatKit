@@ -18,3 +18,11 @@ MoonSatKit is organized around a small set of stable layers:
     cone model.
 
 The architecture deliberately keeps the preview model available while the near-earth high-fidelity model is validated against public reference vectors. This makes the numerical boundary explicit and leaves room for SDP4, exports, and visualization without changing the observation data model.
+
+## TLE Catalog Boundary
+
+The catalog layer accepts standard two-line records and the common named
+three-line format. It validates each pair through the same checksum-aware TLE
+parser used by single-satellite APIs, then passes validated entries to the
+SGP4 pass predictor. Catalog results retain the display name and NORAD number
+and expose integer-second pass duration for JSON, CSV, and browser consumers.

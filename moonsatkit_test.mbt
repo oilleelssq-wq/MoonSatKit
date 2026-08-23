@@ -508,6 +508,8 @@ test "export orbit and pass data to JSON and CSV" {
   let passes_csv = @moonsatkit.pass_windows_to_csv(passes)
   assert_true(passes_json.length() > 80)
   assert_true(passes_csv.length() > 60)
+  assert_true(passes_json.contains("duration_seconds"))
+  assert_true(passes_csv.contains("duration_seconds"))
 }
 
 ///|
@@ -578,4 +580,45 @@ test "SGP4 eclipse report returns machine-readable illumination data" {
   assert_true(report.contains("\"illumination\""))
   assert_true(report.contains("\"sun\""))
   assert_true(report.contains("\"orbit\""))
+}
+
+///|
+test "parse named and unnamed TLE catalog records" {
+  let text = "ISS (ZARYA)\n" +
+    @moonsatkit.vallado_00005_line1 +
+    "\n" +
+    @moonsatkit.vallado_00005_line2 +
+    "\n" +
+    @moonsatkit.vallado_00005_line1 +
+    "\n" +
+    @moonsatkit.vallado_00005_line2
+  let entries = @moonsatkit.parse_tle_catalog(text).unwrap()
+  assert_eq(entries.length(), 2)
+  assert_eq(entries[0].name, "ISS (ZARYA)")
+  assert_eq(entries[1].name, "NORAD 5")
+}
+
+///|
+test "predict and export catalog pass windows" {
+  let catalog = @moonsatkit.parse_tle_catalog(
+    "Vallado 00005\n" +
+    @moonsatkit.vallado_00005_line1 +
+    "\n" +
+    @moonsatkit.vallado_00005_line2,
+  ).unwrap()
+  let from = @moonsatkit.parse_utc_datetime("2000-06-27T18:50:19").unwrap()
+  let station : @moonsatkit.GroundStation = {
+    latitude_deg: 0.0,
+    longitude_deg: 0.0,
+    altitude_m: 0.0,
+  }
+  let passes = @moonsatkit.predict_catalog_passes_sgp4(
+    catalog, station, from, 2, 10.0,
+  ).unwrap()
+  assert_true(passes.length() > 0)
+  assert_true(passes[0].window.duration_seconds() >= 0)
+  let json = @moonsatkit.catalog_pass_windows_to_json(passes)
+  let csv = @moonsatkit.catalog_pass_windows_to_csv(passes)
+  assert_true(json.contains("catalog_number"))
+  assert_true(csv.contains("maximum_elevation_deg"))
 }

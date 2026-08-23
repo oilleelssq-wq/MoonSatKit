@@ -6,6 +6,10 @@ import {
 }
 
 // Values
+pub fn catalog_pass_windows_to_csv(Array[CatalogPassWindow]) -> String
+
+pub fn catalog_pass_windows_to_json(Array[CatalogPassWindow]) -> String
+
 pub fn days_in_month(Int, Int) -> Int
 
 pub fn ecef_to_eci(Vector3, UtcDateTime) -> Vector3
@@ -48,11 +52,15 @@ pub fn orbit_state_to_json(OrbitState) -> String
 
 pub fn parse_tle(String, String) -> Result[Tle, SatError]
 
+pub fn parse_tle_catalog(String) -> Result[Array[TleCatalogEntry], SatError]
+
 pub fn parse_utc_datetime(String) -> Result[UtcDateTime, SatError]
 
 pub fn pass_windows_to_csv(Array[PassWindow]) -> String
 
 pub fn pass_windows_to_json(Array[PassWindow]) -> String
+
+pub fn predict_catalog_passes_sgp4(Array[TleCatalogEntry], GroundStation, UtcDateTime, Int, Double) -> Result[Array[CatalogPassWindow], SatError]
 
 pub fn predict_passes(Tle, GroundStation, UtcDateTime, Int, Double) -> Result[Array[PassWindow], SatError]
 
@@ -81,6 +89,12 @@ pub let vallado_00005_line2 : String
 // Errors
 
 // Types and methods
+pub(all) struct CatalogPassWindow {
+  name : String
+  catalog_number : Int
+  window : PassWindow
+} derive(Eq, @debug.Debug)
+
 pub(all) struct EcefState {
   epoch : UtcDateTime
   position_km : Vector3
@@ -139,6 +153,7 @@ pub(all) struct PassWindow {
   los : UtcDateTime
   maximum_elevation_deg : Double
 } derive(Eq, @debug.Debug)
+pub fn PassWindow::duration_seconds(Self) -> Int
 
 pub(all) struct SatError {
   kind : SatErrorKind
@@ -201,6 +216,11 @@ pub(all) struct Tle {
   bstar : String
   checksum_line1_ok : Bool
   checksum_line2_ok : Bool
+} derive(Eq, @debug.Debug)
+
+pub(all) struct TleCatalogEntry {
+  name : String
+  tle : Tle
 } derive(Eq, @debug.Debug)
 
 pub(all) struct UtcDateTime {

@@ -32,7 +32,7 @@ pub fn pass_windows_to_json(passes : Array[PassWindow]) -> String {
     }
     first = false
     output = output +
-      "{\"aos\":\"\{pass.aos.to_string()}\",\"tca\":\"\{pass.tca.to_string()}\",\"los\":\"\{pass.los.to_string()}\",\"maximum_elevation_deg\":\{pass.maximum_elevation_deg}}"
+      "{\"aos\":\"\{pass.aos.to_string()}\",\"tca\":\"\{pass.tca.to_string()}\",\"los\":\"\{pass.los.to_string()}\",\"duration_seconds\":\{pass.duration_seconds()},\"maximum_elevation_deg\":\{pass.maximum_elevation_deg}}"
   }
   output + "]"
 }
@@ -40,10 +40,78 @@ pub fn pass_windows_to_json(passes : Array[PassWindow]) -> String {
 ///|
 /// Serialize pass windows as a UTF-8 CSV document with a header row.
 pub fn pass_windows_to_csv(passes : Array[PassWindow]) -> String {
-  let mut output = "aos,tca,los,maximum_elevation_deg\n"
+  let mut output = "aos,tca,los,duration_seconds,maximum_elevation_deg\n"
   for pass in passes {
     output = output +
-      "\{pass.aos.to_string()},\{pass.tca.to_string()},\{pass.los.to_string()},\{pass.maximum_elevation_deg}\n"
+      "\{pass.aos.to_string()},\{pass.tca.to_string()},\{pass.los.to_string()},\{pass.duration_seconds()},\{pass.maximum_elevation_deg}\n"
+  }
+  output
+}
+
+///|
+fn json_escape(value : String) -> String {
+  let mut output = ""
+  for char in value.iter() {
+    match char {
+      '"' => output = output + "\\\""
+      '\\' => output = output + "\\\\"
+      '\n' => output = output + "\\n"
+      '\r' => output = output + "\\r"
+      '\t' => output = output + "\\t"
+      _ => output = output + "\{char}"
+    }
+  }
+  output
+}
+
+///|
+/// Serialize catalog pass windows with the satellite name and NORAD number.
+pub fn catalog_pass_windows_to_json(
+  passes : Array[CatalogPassWindow],
+) -> String {
+  let mut output = "["
+  let mut first = true
+  for pass in passes {
+    if !first {
+      output = output + ","
+    }
+    first = false
+    output = output +
+      "{\"name\":\"\{json_escape(pass.name)}\",\"catalog_number\":\{pass.catalog_number},\"aos\":\"\{pass.window.aos.to_string()}\",\"tca\":\"\{pass.window.tca.to_string()}\",\"los\":\"\{pass.window.los.to_string()}\",\"duration_seconds\":\{pass.window.duration_seconds()},\"maximum_elevation_deg\":\{pass.window.maximum_elevation_deg}}"
+  }
+  output + "]"
+}
+
+///|
+fn csv_escape(value : String) -> String {
+  let mut needs_quotes = false
+  for char in value.iter() {
+    if char == ',' || char == '"' || char == '\n' || char == '\r' {
+      needs_quotes = true
+    }
+  }
+  let mut escaped = ""
+  for char in value.iter() {
+    if char == '"' {
+      escaped = escaped + "\"\""
+    } else {
+      escaped = escaped + "\{char}"
+    }
+  }
+  if needs_quotes {
+    "\"" + escaped + "\""
+  } else {
+    escaped
+  }
+}
+
+///|
+/// Serialize catalog pass windows as CSV.
+pub fn catalog_pass_windows_to_csv(passes : Array[CatalogPassWindow]) -> String {
+  let mut output = "name,catalog_number,aos,tca,los,duration_seconds,maximum_elevation_deg\n"
+  for pass in passes {
+    output = output +
+      "\{csv_escape(pass.name)},\{pass.catalog_number},\{pass.window.aos.to_string()},\{pass.window.tca.to_string()},\{pass.window.los.to_string()},\{pass.window.duration_seconds()},\{pass.window.maximum_elevation_deg}\n"
   }
   output
 }
