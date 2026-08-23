@@ -284,6 +284,13 @@ function _M0DTPC16result6ResultGRPB5ArrayGRP26oillee10moonsatkit10PassWindowERP2
   this._0 = param0;
 }
 _M0DTPC16result6ResultGRPB5ArrayGRP26oillee10moonsatkit10PassWindowERP26oillee10moonsatkit8SatErrorE2Ok.prototype.$tag = 1;
+function _M0TP26oillee10moonsatkit11SunPosition(param0, param1, param2, param3, param4) {
+  this.position_km = param0;
+  this.distance_km = param1;
+  this.distance_au = param2;
+  this.right_ascension_deg = param3;
+  this.declination_deg = param4;
+}
 function _M0DTPC16result6ResultGsRP26oillee10moonsatkit8SatErrorE3Err(param0) {
   this._0 = param0;
 }
@@ -306,19 +313,19 @@ const _M0MPB4Iter4nextN6constrS9183GcE = 0;
 const _M0MPB4Iter4nextN6constrS9184GcE = 0;
 const _M0MPB4Iter3newN6constrS9191GRPC16string10StringViewE = 0;
 const _M0MPB4Iter3newN6constrS9191GcE = 0;
-const _M0FP26oillee10moonsatkit13split__fieldsN7_2abindS818 = " ";
-const _M0FP26oillee10moonsatkit16parse__core__tleN7_2abindS824 = "1";
-const _M0FP26oillee10moonsatkit16parse__core__tleN7_2abindS825 = "2";
-const _M0FP26oillee10moonsatkit20parse__utc__datetimeN7_2abindS953 = "Z";
-const _M0FP26oillee10moonsatkit20parse__utc__datetimeN7_2abindS952 = "T";
-const _M0FP26oillee10moonsatkit20parse__utc__datetimeN7_2abindS951 = " ";
-const _M0FP26oillee10moonsatkit20parse__utc__datetimeN7_2abindS950 = "-";
-const _M0FP26oillee10moonsatkit20parse__utc__datetimeN7_2abindS949 = ":";
+const _M0FP26oillee10moonsatkit13split__fieldsN7_2abindS876 = " ";
+const _M0FP26oillee10moonsatkit16parse__core__tleN7_2abindS882 = "1";
+const _M0FP26oillee10moonsatkit16parse__core__tleN7_2abindS883 = "2";
+const _M0FP26oillee10moonsatkit20parse__utc__datetimeN7_2abindS1011 = "Z";
+const _M0FP26oillee10moonsatkit20parse__utc__datetimeN7_2abindS1010 = "T";
+const _M0FP26oillee10moonsatkit20parse__utc__datetimeN7_2abindS1009 = " ";
+const _M0FP26oillee10moonsatkit20parse__utc__datetimeN7_2abindS1008 = "-";
+const _M0FP26oillee10moonsatkit20parse__utc__datetimeN7_2abindS1007 = ":";
 const _M0FPB18brute__force__findN6constrS9194 = 0;
 const _M0FPB28boyer__moore__horspool__findN6constrS9193 = 0;
-const _M0FP26oillee10moonsatkit17parse__tle__epochN6constrS1387 = 2;
-const _M0FP26oillee10moonsatkit17parse__tle__epochN6constrS1388 = 5;
-const _M0FP26oillee10moonsatkit17sgp4__init__modelN5tupleS1386 = { _0: 0, _1: 0, _2: 0 };
+const _M0FP26oillee10moonsatkit17parse__tle__epochN6constrS1466 = 2;
+const _M0FP26oillee10moonsatkit17parse__tle__epochN6constrS1467 = 5;
+const _M0FP26oillee10moonsatkit17sgp4__init__modelN5tupleS1465 = { _0: 0, _1: 0, _2: 0 };
 function _M0FPC15abort5abortGRPC16string10StringViewE(msg) {
   return $panic();
 }
@@ -1067,7 +1074,7 @@ function _M0FP26oillee10moonsatkit19parse__tle__decimal(text) {
   return valid.val ? value.val : undefined;
 }
 function _M0FP26oillee10moonsatkit13split__fields(line) {
-  return _M0MPB4Iter9to__arrayGRPC16string10StringViewE(_M0MPB4Iter6filterGRPC16string10StringViewE(_M0MPC16string10StringView5split(_M0MPC16string10StringView4trim(line, undefined), new _M0TPC16string10StringView(_M0FP26oillee10moonsatkit13split__fieldsN7_2abindS818, 0, _M0FP26oillee10moonsatkit13split__fieldsN7_2abindS818.length)), (part) => !((part.end - part.start | 0) === 0)));
+  return _M0MPB4Iter9to__arrayGRPC16string10StringViewE(_M0MPB4Iter6filterGRPC16string10StringViewE(_M0MPC16string10StringView5split(_M0MPC16string10StringView4trim(line, undefined), new _M0TPC16string10StringView(_M0FP26oillee10moonsatkit13split__fieldsN7_2abindS876, 0, _M0FP26oillee10moonsatkit13split__fieldsN7_2abindS876.length)), (part) => !((part.end - part.start | 0) === 0)));
 }
 function _M0FP26oillee10moonsatkit22parse__catalog__number(token) {
   if ((token.end - token.start | 0) === 0) {
@@ -1174,7 +1181,7 @@ function _M0FP26oillee10moonsatkit16parse__core__tle(line1, line2) {
   if (fields1.length < 9 || fields2.length < 8) {
     return new _M0DTPC16result6ResultGRP26oillee10moonsatkit3TleRP26oillee10moonsatkit8SatErrorE3Err(_M0FP26oillee10moonsatkit10tle__error(1, 0, new _M0TPC16string10StringView(line1, 0, line1.length), "TLE lines do not contain enough fields"));
   }
-  if (_M0IP016_24default__implPB2Eq10not__equalGRPC16string10StringViewE(_M0MPC15array5Array2atGRPC16string10StringViewE(fields1, 0), new _M0TPC16string10StringView(_M0FP26oillee10moonsatkit16parse__core__tleN7_2abindS824, 0, _M0FP26oillee10moonsatkit16parse__core__tleN7_2abindS824.length)) || _M0IP016_24default__implPB2Eq10not__equalGRPC16string10StringViewE(_M0MPC15array5Array2atGRPC16string10StringViewE(fields2, 0), new _M0TPC16string10StringView(_M0FP26oillee10moonsatkit16parse__core__tleN7_2abindS825, 0, _M0FP26oillee10moonsatkit16parse__core__tleN7_2abindS825.length))) {
+  if (_M0IP016_24default__implPB2Eq10not__equalGRPC16string10StringViewE(_M0MPC15array5Array2atGRPC16string10StringViewE(fields1, 0), new _M0TPC16string10StringView(_M0FP26oillee10moonsatkit16parse__core__tleN7_2abindS882, 0, _M0FP26oillee10moonsatkit16parse__core__tleN7_2abindS882.length)) || _M0IP016_24default__implPB2Eq10not__equalGRPC16string10StringViewE(_M0MPC15array5Array2atGRPC16string10StringViewE(fields2, 0), new _M0TPC16string10StringView(_M0FP26oillee10moonsatkit16parse__core__tleN7_2abindS883, 0, _M0FP26oillee10moonsatkit16parse__core__tleN7_2abindS883.length))) {
     return new _M0DTPC16result6ResultGRP26oillee10moonsatkit3TleRP26oillee10moonsatkit8SatErrorE3Err(_M0FP26oillee10moonsatkit10tle__error(1, 0, new _M0TPC16string10StringView(line1, 0, line1.length), "TLE lines must begin with 1 and 2"));
   }
   const _bind = _M0FP26oillee10moonsatkit22parse__catalog__number(_M0MPC15array5Array2atGRPC16string10StringViewE(fields1, 1));
@@ -1416,14 +1423,14 @@ function _M0FP26oillee10moonsatkit20parse__utc__datetime(text) {
   if ((trimmed.end - trimmed.start | 0) === 0) {
     return new _M0DTPC16result6ResultGRP26oillee10moonsatkit11UtcDateTimeRP26oillee10moonsatkit8SatErrorE3Err(_M0FP26oillee10moonsatkit11time__error(0, new _M0TPC16string10StringView(text, 0, text.length), "timestamp must not be empty"));
   }
-  const without_z = _M0MPC15array5Array2atGRPC16string10StringViewE(_M0MPB4Iter9to__arrayGRPC16string10StringViewE(_M0MPC16string10StringView5split(trimmed, new _M0TPC16string10StringView(_M0FP26oillee10moonsatkit20parse__utc__datetimeN7_2abindS953, 0, _M0FP26oillee10moonsatkit20parse__utc__datetimeN7_2abindS953.length))), 0);
-  const date_time_parts = _M0MPB4Iter9to__arrayGRPC16string10StringViewE(_M0MPB4Iter6filterGRPC16string10StringViewE(_M0MPC16string10StringView5split(without_z, new _M0TPC16string10StringView(_M0FP26oillee10moonsatkit20parse__utc__datetimeN7_2abindS952, 0, _M0FP26oillee10moonsatkit20parse__utc__datetimeN7_2abindS952.length)), (part) => !((part.end - part.start | 0) === 0)));
-  const parts = date_time_parts.length === 2 ? date_time_parts : _M0MPB4Iter9to__arrayGRPC16string10StringViewE(_M0MPB4Iter6filterGRPC16string10StringViewE(_M0MPC16string10StringView5split(without_z, new _M0TPC16string10StringView(_M0FP26oillee10moonsatkit20parse__utc__datetimeN7_2abindS951, 0, _M0FP26oillee10moonsatkit20parse__utc__datetimeN7_2abindS951.length)), (part) => !((part.end - part.start | 0) === 0)));
+  const without_z = _M0MPC15array5Array2atGRPC16string10StringViewE(_M0MPB4Iter9to__arrayGRPC16string10StringViewE(_M0MPC16string10StringView5split(trimmed, new _M0TPC16string10StringView(_M0FP26oillee10moonsatkit20parse__utc__datetimeN7_2abindS1011, 0, _M0FP26oillee10moonsatkit20parse__utc__datetimeN7_2abindS1011.length))), 0);
+  const date_time_parts = _M0MPB4Iter9to__arrayGRPC16string10StringViewE(_M0MPB4Iter6filterGRPC16string10StringViewE(_M0MPC16string10StringView5split(without_z, new _M0TPC16string10StringView(_M0FP26oillee10moonsatkit20parse__utc__datetimeN7_2abindS1010, 0, _M0FP26oillee10moonsatkit20parse__utc__datetimeN7_2abindS1010.length)), (part) => !((part.end - part.start | 0) === 0)));
+  const parts = date_time_parts.length === 2 ? date_time_parts : _M0MPB4Iter9to__arrayGRPC16string10StringViewE(_M0MPB4Iter6filterGRPC16string10StringViewE(_M0MPC16string10StringView5split(without_z, new _M0TPC16string10StringView(_M0FP26oillee10moonsatkit20parse__utc__datetimeN7_2abindS1009, 0, _M0FP26oillee10moonsatkit20parse__utc__datetimeN7_2abindS1009.length)), (part) => !((part.end - part.start | 0) === 0)));
   if (parts.length !== 2) {
     return new _M0DTPC16result6ResultGRP26oillee10moonsatkit11UtcDateTimeRP26oillee10moonsatkit8SatErrorE3Err(_M0FP26oillee10moonsatkit11time__error(8, new _M0TPC16string10StringView(text, 0, text.length), "timestamp must use YYYY-MM-DDTHH:MM[:SS] format"));
   }
-  const date_parts = _M0MPB4Iter9to__arrayGRPC16string10StringViewE(_M0MPC16string10StringView5split(_M0MPC15array5Array2atGRPC16string10StringViewE(parts, 0), new _M0TPC16string10StringView(_M0FP26oillee10moonsatkit20parse__utc__datetimeN7_2abindS950, 0, _M0FP26oillee10moonsatkit20parse__utc__datetimeN7_2abindS950.length)));
-  const time_parts = _M0MPB4Iter9to__arrayGRPC16string10StringViewE(_M0MPC16string10StringView5split(_M0MPC15array5Array2atGRPC16string10StringViewE(parts, 1), new _M0TPC16string10StringView(_M0FP26oillee10moonsatkit20parse__utc__datetimeN7_2abindS949, 0, _M0FP26oillee10moonsatkit20parse__utc__datetimeN7_2abindS949.length)));
+  const date_parts = _M0MPB4Iter9to__arrayGRPC16string10StringViewE(_M0MPC16string10StringView5split(_M0MPC15array5Array2atGRPC16string10StringViewE(parts, 0), new _M0TPC16string10StringView(_M0FP26oillee10moonsatkit20parse__utc__datetimeN7_2abindS1008, 0, _M0FP26oillee10moonsatkit20parse__utc__datetimeN7_2abindS1008.length)));
+  const time_parts = _M0MPB4Iter9to__arrayGRPC16string10StringViewE(_M0MPC16string10StringView5split(_M0MPC15array5Array2atGRPC16string10StringViewE(parts, 1), new _M0TPC16string10StringView(_M0FP26oillee10moonsatkit20parse__utc__datetimeN7_2abindS1007, 0, _M0FP26oillee10moonsatkit20parse__utc__datetimeN7_2abindS1007.length)));
   if (date_parts.length !== 3) {
     return new _M0DTPC16result6ResultGRP26oillee10moonsatkit11UtcDateTimeRP26oillee10moonsatkit8SatErrorE3Err(_M0FP26oillee10moonsatkit11time__error(8, _M0MPC15array5Array2atGRPC16string10StringViewE(parts, 0), "timestamp date must use YYYY-MM-DD format"));
   }
@@ -1645,7 +1652,7 @@ function _M0FP26oillee10moonsatkit17sgp4__init__model(elements) {
   const x7thm1 = 7 * cosio2 - 1;
   let d2_d3_d4;
   if (isimp) {
-    d2_d3_d4 = _M0FP26oillee10moonsatkit17sgp4__init__modelN5tupleS1386;
+    d2_d3_d4 = _M0FP26oillee10moonsatkit17sgp4__init__modelN5tupleS1465;
   } else {
     const cc1sq = cc1 * cc1;
     const d2 = 4 * ao * tsi * cc1sq;
@@ -1708,8 +1715,8 @@ function _M0FP26oillee10moonsatkit17parse__tle__epoch(epoch) {
   if (epoch.length < 8) {
     return new _M0DTPC16result6ResultGURP26oillee10moonsatkit11UtcDateTimedERP26oillee10moonsatkit8SatErrorE3Err(_M0MP26oillee10moonsatkit8SatError11new_2einner(5, "TLE epoch must use YYDDD.dddddddd format", epoch, 0));
   }
-  const year_text = _M0MPC16string6String12view_2einner(epoch, 0, _M0FP26oillee10moonsatkit17parse__tle__epochN6constrS1387);
-  const day_text = _M0MPC16string6String12view_2einner(epoch, 2, _M0FP26oillee10moonsatkit17parse__tle__epochN6constrS1388);
+  const year_text = _M0MPC16string6String12view_2einner(epoch, 0, _M0FP26oillee10moonsatkit17parse__tle__epochN6constrS1466);
+  const day_text = _M0MPC16string6String12view_2einner(epoch, 2, _M0FP26oillee10moonsatkit17parse__tle__epochN6constrS1467);
   const fraction_text = _M0MPC16string6String12view_2einner(epoch, 6, undefined);
   const _bind = _M0FP26oillee10moonsatkit14parse__decimal(year_text);
   let year_short;
@@ -2434,6 +2441,9 @@ function _M0FP26oillee10moonsatkit21predict__passes__sgp4(tle, station, from, du
   }
   return new _M0DTPC16result6ResultGRPB5ArrayGRP26oillee10moonsatkit10PassWindowERP26oillee10moonsatkit8SatErrorE2Ok(passes);
 }
+function _M0MP26oillee10moonsatkit7Vector35scale(self, factor) {
+  return new _M0TP26oillee10moonsatkit7Vector3(self.x * factor, self.y * factor, self.z * factor);
+}
 function _M0FP26oillee10moonsatkit18ecef__to__geodetic(position) {
   const distance_from_axis = Math.sqrt(position.x * position.x + position.y * position.y);
   if (distance_from_axis < 1e-012) {
@@ -2464,6 +2474,112 @@ function _M0FP26oillee10moonsatkit18ecef__to__geodetic(position) {
 }
 function _M0FP26oillee10moonsatkit22orbit__state__geodetic(state) {
   return _M0FP26oillee10moonsatkit18ecef__to__geodetic(_M0FP26oillee10moonsatkit13eci__to__ecef(state.position_km, state.epoch));
+}
+function _M0FP26oillee10moonsatkit22orbit__state__to__json(state) {
+  const _string_builder = _M0MPB13StringBuilder21StringBuilder_2einner(76);
+  _M0IPB13StringBuilderPB6Logger13write__string(_string_builder, "{\"epoch\":\"");
+  _M0MPB13StringBuilder13write__objectGsE(_string_builder, _M0MP26oillee10moonsatkit11UtcDateTime10to__string(state.epoch));
+  _M0IPB13StringBuilderPB6Logger13write__string(_string_builder, "\",\"position_km\":{\"x\":");
+  _M0MPB13StringBuilder13write__objectGdE(_string_builder, state.position_km.x);
+  _M0IPB13StringBuilderPB6Logger13write__string(_string_builder, ",\"y\":");
+  _M0MPB13StringBuilder13write__objectGdE(_string_builder, state.position_km.y);
+  _M0IPB13StringBuilderPB6Logger13write__string(_string_builder, ",\"z\":");
+  _M0MPB13StringBuilder13write__objectGdE(_string_builder, state.position_km.z);
+  _M0IPB13StringBuilderPB6Logger13write__string(_string_builder, "},\"velocity_km_s\":{\"x\":");
+  _M0MPB13StringBuilder13write__objectGdE(_string_builder, state.velocity_km_s.x);
+  _M0IPB13StringBuilderPB6Logger13write__string(_string_builder, ",\"y\":");
+  _M0MPB13StringBuilder13write__objectGdE(_string_builder, state.velocity_km_s.y);
+  _M0IPB13StringBuilderPB6Logger13write__string(_string_builder, ",\"z\":");
+  _M0MPB13StringBuilder13write__objectGdE(_string_builder, state.velocity_km_s.z);
+  _M0IPB13StringBuilderPB6Logger13write__string(_string_builder, "}}");
+  return _string_builder.val;
+}
+function _M0FP26oillee10moonsatkit18normalize__degrees(value) {
+  const wrapped = _M0IPC16double6DoublePB3Mod3mod(value, 360);
+  return wrapped < 0 ? wrapped + 360 : wrapped;
+}
+function _M0FP26oillee10moonsatkit18sun__position__eci(instant) {
+  const days_since_j2000 = _M0FP26oillee10moonsatkit11julian__day(instant) - 2451545;
+  const mean_longitude_deg = _M0FP26oillee10moonsatkit18normalize__degrees(280.46 + 0.9856474 * days_since_j2000);
+  const mean_anomaly_rad = _M0FP26oillee10moonsatkit18normalize__degrees(357.528 + 0.9856003 * days_since_j2000) * 3.1415926535897931 / 180;
+  const ecliptic_longitude_rad = _M0FP26oillee10moonsatkit18normalize__degrees(mean_longitude_deg + 1.915 * _M0FPC14math3sin(mean_anomaly_rad) + 0.02 * _M0FPC14math3sin(2 * mean_anomaly_rad)) * 3.1415926535897931 / 180;
+  const obliquity_rad = (23.439 - 4e-007 * days_since_j2000) * 3.1415926535897931 / 180;
+  const distance_au = 1.00014 - 0.01671 * _M0FPC14math3cos(mean_anomaly_rad) - 0.00014 * _M0FPC14math3cos(2 * mean_anomaly_rad);
+  const distance_km = distance_au * 149597870.7;
+  const cosine_longitude = _M0FPC14math3cos(ecliptic_longitude_rad);
+  const sine_longitude = _M0FPC14math3sin(ecliptic_longitude_rad);
+  const _bind = distance_km * cosine_longitude;
+  const _bind$2 = distance_km * _M0FPC14math3cos(obliquity_rad) * sine_longitude;
+  const _bind$3 = distance_km * _M0FPC14math3sin(obliquity_rad) * sine_longitude;
+  const position = new _M0TP26oillee10moonsatkit7Vector3(_bind, _bind$2, _bind$3);
+  const right_ascension = _M0FPC14math5atan2(_bind$2, _bind) * 180 / 3.1415926535897931;
+  const declination = _M0FPC14math5atan2(_bind$3, Math.sqrt(_bind * _bind + _bind$2 * _bind$2)) * 180 / 3.1415926535897931;
+  return new _M0TP26oillee10moonsatkit11SunPosition(position, distance_km, distance_au, _M0FP26oillee10moonsatkit18normalize__degrees(right_ascension), declination);
+}
+function _M0FP26oillee10moonsatkit14eclipse__state(state) {
+  const sun = _M0FP26oillee10moonsatkit18sun__position__eci(state.epoch);
+  const sun_direction = _M0MP26oillee10moonsatkit7Vector35scale(sun.position_km, 1 / sun.distance_km);
+  const _p = state.position_km;
+  const projection = _p.x * sun_direction.x + _p.y * sun_direction.y + _p.z * sun_direction.z;
+  if (projection >= 0) {
+    return 0;
+  }
+  const behind_earth_km = -projection;
+  const perpendicular_vector = _M0MP26oillee10moonsatkit7Vector33sub(state.position_km, _M0MP26oillee10moonsatkit7Vector35scale(sun_direction, projection));
+  const perpendicular_distance_km = Math.sqrt(perpendicular_vector.x * perpendicular_vector.x + perpendicular_vector.y * perpendicular_vector.y + perpendicular_vector.z * perpendicular_vector.z);
+  const umbra_radius_km = 6378.137 - behind_earth_km * 689321.863 / sun.distance_km;
+  const penumbra_radius_km = 6378.137 + behind_earth_km * 702078.137 / sun.distance_km;
+  return umbra_radius_km > 0 && perpendicular_distance_km <= umbra_radius_km ? 2 : perpendicular_distance_km <= penumbra_radius_km ? 1 : 0;
+}
+function _M0MP26oillee10moonsatkit12EclipseState10to__string(self) {
+  switch (self) {
+    case 0: {
+      return "sunlit";
+    }
+    case 1: {
+      return "penumbra";
+    }
+    default: {
+      return "umbra";
+    }
+  }
+}
+function _M0FP26oillee10moonsatkit25eclipse__report__to__json(tle, instant) {
+  const _bind = _M0FP26oillee10moonsatkit15propagate__sgp4(tle, instant);
+  let state;
+  if (_bind.$tag === 1) {
+    const _Ok = _bind;
+    state = _Ok._0;
+  } else {
+    const _Err = _bind;
+    const _error = _Err._0;
+    return new _M0DTPC16result6ResultGsRP26oillee10moonsatkit8SatErrorE3Err(_error);
+  }
+  const sun = _M0FP26oillee10moonsatkit18sun__position__eci(instant);
+  const illumination = _M0FP26oillee10moonsatkit14eclipse__state(state);
+  const _string_builder = _M0MPB13StringBuilder21StringBuilder_2einner(163);
+  _M0IPB13StringBuilderPB6Logger13write__string(_string_builder, "{\"ok\":true,\"catalog_number\":");
+  _M0MPB13StringBuilder13write__objectGiE(_string_builder, tle.catalog_number);
+  _M0IPB13StringBuilderPB6Logger13write__string(_string_builder, ",\"epoch\":\"");
+  _M0MPB13StringBuilder13write__objectGsE(_string_builder, _M0MP26oillee10moonsatkit11UtcDateTime10to__string(instant));
+  _M0IPB13StringBuilderPB6Logger13write__string(_string_builder, "\",\"illumination\":\"");
+  _M0MPB13StringBuilder13write__objectGsE(_string_builder, _M0MP26oillee10moonsatkit12EclipseState10to__string(illumination));
+  _M0IPB13StringBuilderPB6Logger13write__string(_string_builder, "\",\"sun\":{\"right_ascension_deg\":");
+  _M0MPB13StringBuilder13write__objectGdE(_string_builder, sun.right_ascension_deg);
+  _M0IPB13StringBuilderPB6Logger13write__string(_string_builder, ",\"declination_deg\":");
+  _M0MPB13StringBuilder13write__objectGdE(_string_builder, sun.declination_deg);
+  _M0IPB13StringBuilderPB6Logger13write__string(_string_builder, ",\"distance_au\":");
+  _M0MPB13StringBuilder13write__objectGdE(_string_builder, sun.distance_au);
+  _M0IPB13StringBuilderPB6Logger13write__string(_string_builder, ",\"position_km\":{\"x\":");
+  _M0MPB13StringBuilder13write__objectGdE(_string_builder, sun.position_km.x);
+  _M0IPB13StringBuilderPB6Logger13write__string(_string_builder, ",\"y\":");
+  _M0MPB13StringBuilder13write__objectGdE(_string_builder, sun.position_km.y);
+  _M0IPB13StringBuilderPB6Logger13write__string(_string_builder, ",\"z\":");
+  _M0MPB13StringBuilder13write__objectGdE(_string_builder, sun.position_km.z);
+  _M0IPB13StringBuilderPB6Logger13write__string(_string_builder, "}},\"orbit\":");
+  _M0MPB13StringBuilder13write__objectGsE(_string_builder, _M0FP26oillee10moonsatkit22orbit__state__to__json(state));
+  _M0IPB13StringBuilderPB6Logger13write__string(_string_builder, "}");
+  return new _M0DTPC16result6ResultGsRP26oillee10moonsatkit8SatErrorE2Ok(_string_builder.val);
 }
 function _M0FP26oillee10moonsatkit23pass__windows__to__json(passes) {
   let output = "[";
@@ -2644,4 +2760,35 @@ function _M0FP46oillee10moonsatkit3web4wasm23moon__sat__passes__json(line1, line
     return _M0FP46oillee10moonsatkit3web4wasm11error__json(_error);
   }
 }
-export { _M0FP46oillee10moonsatkit3web4wasm24moon__sat__validate__tle as moon_sat_validate_tle, _M0FP46oillee10moonsatkit3web4wasm25moon__sat__track__geojson as moon_sat_track_geojson, _M0FP46oillee10moonsatkit3web4wasm23moon__sat__passes__json as moon_sat_passes_json }
+function _M0FP46oillee10moonsatkit3web4wasm24moon__sat__eclipse__json(line1, line2, instant_text) {
+  const _bind = _M0FP26oillee10moonsatkit13validate__tle(line1, line2);
+  let tle;
+  if (_bind.$tag === 1) {
+    const _Ok = _bind;
+    tle = _Ok._0;
+  } else {
+    const _Err = _bind;
+    const _error = _Err._0;
+    return _M0FP46oillee10moonsatkit3web4wasm11error__json(_error);
+  }
+  const _bind$2 = _M0FP26oillee10moonsatkit20parse__utc__datetime(instant_text);
+  let instant;
+  if (_bind$2.$tag === 1) {
+    const _Ok = _bind$2;
+    instant = _Ok._0;
+  } else {
+    const _Err = _bind$2;
+    const _error = _Err._0;
+    return _M0FP46oillee10moonsatkit3web4wasm11error__json(_error);
+  }
+  const _bind$3 = _M0FP26oillee10moonsatkit25eclipse__report__to__json(tle, instant);
+  if (_bind$3.$tag === 1) {
+    const _Ok = _bind$3;
+    return _Ok._0;
+  } else {
+    const _Err = _bind$3;
+    const _error = _Err._0;
+    return _M0FP46oillee10moonsatkit3web4wasm11error__json(_error);
+  }
+}
+export { _M0FP46oillee10moonsatkit3web4wasm24moon__sat__validate__tle as moon_sat_validate_tle, _M0FP46oillee10moonsatkit3web4wasm25moon__sat__track__geojson as moon_sat_track_geojson, _M0FP46oillee10moonsatkit3web4wasm23moon__sat__passes__json as moon_sat_passes_json, _M0FP46oillee10moonsatkit3web4wasm24moon__sat__eclipse__json as moon_sat_eclipse_json }

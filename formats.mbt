@@ -5,6 +5,23 @@ pub fn orbit_state_to_json(state : OrbitState) -> String {
 }
 
 ///|
+/// Serialize a propagated state together with its illumination status.
+pub fn eclipse_report_to_json(
+  tle : Tle,
+  instant : UtcDateTime,
+) -> Result[String, SatError] {
+  let state = match propagate_sgp4(tle, instant) {
+    Ok(value) => value
+    Err(error) => return Err(error)
+  }
+  let sun = sun_position_eci(instant)
+  let illumination = eclipse_state(state)
+  Ok(
+    "{\"ok\":true,\"catalog_number\":\{tle.catalog_number},\"epoch\":\"\{instant.to_string()}\",\"illumination\":\"\{illumination.to_string()}\",\"sun\":{\"right_ascension_deg\":\{sun.right_ascension_deg},\"declination_deg\":\{sun.declination_deg},\"distance_au\":\{sun.distance_au},\"position_km\":{\"x\":\{sun.position_km.x},\"y\":\{sun.position_km.y},\"z\":\{sun.position_km.z}}},\"orbit\":\{orbit_state_to_json(state)}}",
+  )
+}
+
+///|
 /// Serialize pass windows as a JSON array.
 pub fn pass_windows_to_json(passes : Array[PassWindow]) -> String {
   let mut output = "["

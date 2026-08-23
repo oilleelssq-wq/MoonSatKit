@@ -520,3 +520,62 @@ test "export a short SGP4 ground track as GeoJSON" {
   assert_true(geojson.length() > 200)
   assert_true(@moonsatkit.track_geojson_sgp4(tle, from, 120, 0) is Err(_))
 }
+
+///|
+test "solar position is physically bounded at J2000" {
+  let epoch = @moonsatkit.parse_utc_datetime("2000-01-01T12:00:00").unwrap()
+  let sun = @moonsatkit.sun_position_eci(epoch)
+  assert_true((sun.distance_au - 0.983).abs() < 0.01)
+  let distance = sun.position_km.dot(sun.position_km).sqrt()
+  assert_true(distance > 140000000.0)
+  assert_true(distance < 155000000.0)
+  assert_true(sun.right_ascension_deg > 270.0)
+  assert_true(sun.right_ascension_deg < 290.0)
+  assert_true(sun.declination_deg < -20.0)
+  assert_true(sun.declination_deg > -27.0)
+}
+
+///|
+test "eclipse classifier distinguishes sunlit umbra and penumbra" {
+  let epoch = @moonsatkit.parse_utc_datetime("2026-08-23T00:00:00").unwrap()
+  let sun = @moonsatkit.sun_position_eci(epoch)
+  let direction = sun.position_km.scale(1.0 / sun.distance_km)
+  let perpendicular_base : @moonsatkit.Vector3 = {
+    x: -direction.y,
+    y: direction.x,
+    z: 0.0,
+  }
+  let perpendicular = perpendicular_base.scale(
+    1.0 / perpendicular_base.dot(perpendicular_base).sqrt(),
+  )
+  let sunlit : @moonsatkit.OrbitState = {
+    epoch,
+    position_km: direction.scale(7000.0),
+    velocity_km_s: @moonsatkit.Vector3::zero(),
+  }
+  let umbra : @moonsatkit.OrbitState = {
+    epoch,
+    position_km: direction.scale(-7000.0),
+    velocity_km_s: @moonsatkit.Vector3::zero(),
+  }
+  let penumbra : @moonsatkit.OrbitState = {
+    epoch,
+    position_km: direction.scale(-7000.0).add(perpendicular.scale(6380.0)),
+    velocity_km_s: @moonsatkit.Vector3::zero(),
+  }
+  assert_eq(@moonsatkit.eclipse_state(sunlit), @moonsatkit.Sunlit)
+  assert_eq(@moonsatkit.eclipse_state(umbra), @moonsatkit.Umbra)
+  assert_eq(@moonsatkit.eclipse_state(penumbra), @moonsatkit.Penumbra)
+}
+
+///|
+test "SGP4 eclipse report returns machine-readable illumination data" {
+  let tle = @moonsatkit.validate_tle(
+    @moonsatkit.vallado_00005_line1, @moonsatkit.vallado_00005_line2,
+  ).unwrap()
+  let instant = @moonsatkit.parse_utc_datetime("2000-06-27T18:50:19").unwrap()
+  let report = @moonsatkit.eclipse_report_to_json(tle, instant).unwrap()
+  assert_true(report.contains("\"illumination\""))
+  assert_true(report.contains("\"sun\""))
+  assert_true(report.contains("\"orbit\""))
+}

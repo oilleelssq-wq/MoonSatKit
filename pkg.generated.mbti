@@ -18,6 +18,12 @@ pub fn eci_to_ecef(Vector3, UtcDateTime) -> Vector3
 
 pub fn eci_to_ecef_state(OrbitState) -> EcefState
 
+pub fn eclipse_report_to_json(Tle, UtcDateTime) -> Result[String, SatError]
+
+pub fn eclipse_state(OrbitState) -> EclipseState
+
+pub fn eclipse_state_sgp4(Tle, UtcDateTime) -> Result[EclipseState, SatError]
+
 pub fn geodetic_to_ecef(GeodeticPosition) -> Vector3
 
 pub fn gmst_angle(Double) -> Double
@@ -62,6 +68,8 @@ pub fn seconds_between(UtcDateTime, UtcDateTime) -> Double
 
 pub fn sgp4_elements(Tle) -> Result[Sgp4Elements, SatError]
 
+pub fn sun_position_eci(UtcDateTime) -> SunPosition
+
 pub fn track_geojson_sgp4(Tle, UtcDateTime, Int, Int) -> Result[String, SatError]
 
 pub fn validate_tle(String, String) -> Result[Tle, SatError]
@@ -78,6 +86,13 @@ pub(all) struct EcefState {
   position_km : Vector3
   velocity_km_s : Vector3
 }
+
+pub(all) enum EclipseState {
+  Sunlit
+  Penumbra
+  Umbra
+} derive(Eq, @debug.Debug)
+pub fn EclipseState::to_string(Self) -> String
 
 pub(all) struct GeodeticPosition {
   latitude_deg : Double
@@ -161,6 +176,14 @@ pub(all) struct Sgp4Elements {
   mean_motion_second_derivative_div2_rev_per_day3 : Double
   bstar : Double
 }
+
+pub(all) struct SunPosition {
+  position_km : Vector3
+  distance_km : Double
+  distance_au : Double
+  right_ascension_deg : Double
+  declination_deg : Double
+} derive(Eq, @debug.Debug)
 
 pub(all) struct Tle {
   line1 : String

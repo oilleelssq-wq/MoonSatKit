@@ -12,6 +12,7 @@ fn print_usage() -> Unit {
   println(
     "  moonsatkit track <line1> <line2> --from <timestamp> --seconds <n> --step <n>",
   )
+  println("  moonsatkit eclipse <line1> <line2> --at <timestamp>")
 }
 
 ///|
@@ -310,6 +311,32 @@ fn run_track(args : Array[String]) -> Unit {
 }
 
 ///|
+fn run_eclipse(args : Array[String]) -> Unit {
+  if args.length() != 6 || args[4] != "--at" {
+    fail("expected: eclipse <line1> <line2> --at <timestamp>")
+    return
+  }
+  let tle = match parse_tle_args(args) {
+    Ok(value) => value
+    Err(message) => {
+      fail(message)
+      return
+    }
+  }
+  let instant = match @lib.parse_utc_datetime(args[5]) {
+    Ok(value) => value
+    Err(error) => {
+      fail(error.to_string())
+      return
+    }
+  }
+  match @lib.eclipse_report_to_json(tle, instant) {
+    Ok(value) => println(value)
+    Err(error) => fail(error.to_string())
+  }
+}
+
+///|
 fn main {
   let args = @env.args()
   if args.length() < 2 {
@@ -341,6 +368,7 @@ fn main {
     "propagate" => run_propagate(args)
     "passes" => run_passes(args)
     "track" => run_track(args)
+    "eclipse" => run_eclipse(args)
     command => {
       fail("unknown command '\{command}'")
       print_usage()

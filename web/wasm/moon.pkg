@@ -14,6 +14,7 @@ options(
         "moon_sat_validate_tle",
         "moon_sat_track_geojson",
         "moon_sat_passes_json",
+        "moon_sat_eclipse_json",
       ],
     },
     "wasm": {
@@ -21,6 +22,7 @@ options(
         "moon_sat_validate_tle",
         "moon_sat_track_geojson",
         "moon_sat_passes_json",
+        "moon_sat_eclipse_json",
       ],
     },
     "wasm-gc": {
@@ -28,6 +30,7 @@ options(
         "moon_sat_validate_tle",
         "moon_sat_track_geojson",
         "moon_sat_passes_json",
+        "moon_sat_eclipse_json",
       ],
     },
   },

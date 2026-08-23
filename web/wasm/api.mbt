@@ -69,3 +69,24 @@ pub fn moon_sat_passes_json(
     Err(error) => error_json(error)
   }
 }
+
+///|
+#export_name("moon_sat_eclipse_json")
+pub fn moon_sat_eclipse_json(
+  line1 : String,
+  line2 : String,
+  instant_text : String,
+) -> String {
+  let tle = match @lib.validate_tle(line1, line2) {
+    Ok(value) => value
+    Err(error) => return error_json(error)
+  }
+  let instant = match @lib.parse_utc_datetime(instant_text) {
+    Ok(value) => value
+    Err(error) => return error_json(error)
+  }
+  match @lib.eclipse_report_to_json(tle, instant) {
+    Ok(value) => value
+    Err(error) => error_json(error)
+  }
+}

@@ -13,5 +13,8 @@ MoonSatKit is organized around a small set of stable layers:
 9. passes.mbt exposes both the compatibility two-body pass search and the SGP4 pass search. Each scans at 60-second intervals, refines AOS/LOS by bisection, and searches for TCA at one-second resolution.
 10. formats.mbt serializes orbit states and pass windows as JSON or CSV, and
     exports sampled SGP4 ground tracks as GeoJSON LineStrings.
+11. eclipse.mbt computes a compact geocentric Sun position and classifies an
+    orbit state as Sunlit, Penumbra, or Umbra with a geometric Earth-shadow
+    cone model.
 
 The architecture deliberately keeps the preview model available while the near-earth high-fidelity model is validated against public reference vectors. This makes the numerical boundary explicit and leaves room for SDP4, exports, and visualization without changing the observation data model.

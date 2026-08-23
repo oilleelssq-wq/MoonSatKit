@@ -26,6 +26,8 @@ handling, near-earth SGP4 propagation, ground-station observation, and pass pred
 - Two-body preview pass prediction with AOS, TCA, LOS, and maximum elevation
 - SGP4 pass prediction with one-second event refinement and ordered visibility windows
 - JSON serialization for orbit states and pass windows
+- Low-precision geocentric Sun position and right-ascension/declination output
+- Geometric sunlit, penumbra, and umbra classification for propagated states
 - CSV pass-window export and GeoJSON SGP4 ground-track export
 - Vector, station, observation, and pass data types
 - CLI entry points for TLE validation and timestamp parsing
@@ -62,6 +64,12 @@ Export a GeoJSON ground track:
 moon run cmd/main -- track "<line1>" "<line2>" --from 2026-08-23T12:00:00 --seconds 86400 --step 60
 ```
 
+Classify satellite illumination and print a machine-readable report:
+
+```console
+moon run cmd/main -- eclipse "<line1>" "<line2>" --at 2026-08-23T12:00:00
+```
+
 Predict pass windows from a validated TLE:
 
 ```moon
@@ -93,10 +101,19 @@ let csv = @moonsatkit.pass_windows_to_csv(passes)
 let track = @moonsatkit.track_geojson_sgp4(tle, start, 86400, 60).unwrap()
 ```
 
+## Acceptance scope
+
+The current acceptance baseline covers TLE checksum validation, near-earth
+SGP4 propagation, WGS-84 coordinate conversion, ground-station observation,
+one-second-refined pass windows, JSON/CSV/GeoJSON export, and geometric
+illumination classification. The reproducible checklist is in
+[`docs/ACCEPTANCE.md`](docs/ACCEPTANCE.md).
+
 ## Roadmap
 
 - Deep-space SDP4 propagation and broader official SGP4 vector coverage
 - Higher-fidelity TEME, Earth orientation, and time-scale refinements
+- Multi-satellite catalogs, Doppler estimates, and constellation coverage
 
 ## Development
 
